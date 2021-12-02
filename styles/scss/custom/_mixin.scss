@@ -1,0 +1,21 @@
+$breakpoint: 789px;
+
+@mixin media-breakpoint-down($breakpoint: $breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint: $breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin checked-gradient {
+  background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+@mixin transition {
+  transition: background-color 200ms, color 200ms;
+}
