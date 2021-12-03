@@ -6,6 +6,10 @@ import "./filter";
 
 let todos = [];
 
+window.addEventListener("DOMContentLoaded", function () {
+  getTodo();
+});
+
 // CLASSES
 
 class Todo {
@@ -34,8 +38,7 @@ class Event {
     todos = todos.filter((todo) => {
       return todo.id !== Number(elementId);
     });
-    UI.clean();
-    UI.showTodoElements(todoFilter(filter));
+    setTodo();
   }
   static toggleComplete() {
     const elementId = this.parentElement.id;
@@ -48,8 +51,7 @@ class Event {
         }
       }
     });
-    UI.clean();
-    UI.showTodoElements(todoFilter(filter));
+    setTodo();
   }
 }
 
@@ -58,8 +60,7 @@ let filter = "all";
 $filters.forEach(($filter) => {
   $filter.addEventListener("click", () => {
     filter = $filter.id;
-    UI.clean();
-    UI.showTodoElements(todoFilter(filter));
+    setTodo();
   });
 });
 
@@ -75,6 +76,19 @@ function todoFilter(value) {
   } else {
     return todos;
   }
+}
+
+function setTodo() {
+  UI.clean();
+  UI.showTodoElements(todoFilter(filter));
+  localStorage.clear();
+  localStorage.setItem("todo-list", JSON.stringify(todos));
+}
+
+function getTodo() {
+  todos = JSON.parse(localStorage.getItem("todo-list")) ?? [];
+  UI.clean();
+  UI.showTodoElements(todoFilter(filter));
 }
 class UI {
   static clean() {
@@ -124,8 +138,7 @@ class UI {
     if (e.key === "Enter" && Input.value() !== "") {
       todos.push(new Todo(Input.value(), id()));
       Input.reset();
-      UI.clean();
-      UI.showTodoElements(todoFilter(filter));
+      setTodo();
     }
   });
 })();
