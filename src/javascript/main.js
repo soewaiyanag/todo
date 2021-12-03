@@ -36,7 +36,21 @@ class Event {
     UI.clean();
     UI.showTodoElements();
   }
-  static toggleComplete() {}
+  static toggleComplete() {
+    const elementId = this.parentElement.id;
+    todos.forEach((todo) => {
+      if (todo.id === Number(elementId)) {
+        if (todo.isCompleted) {
+          todo.isCompleted = false;
+        } else {
+          todo.isCompleted = true;
+        }
+      }
+    });
+    console.log(todos);
+    UI.clean();
+    UI.showTodoElements();
+  }
 }
 
 class UI {
@@ -60,12 +74,19 @@ class UI {
 
       $checkbox.setAttribute("type", "checkbox");
       $checkbox.className = "check";
+      $checkbox.addEventListener("click", Event.toggleComplete);
 
       $task.className = "task";
       $task.textContent = todo.task;
 
       $deleteBtn.className = "bi bi-x delete";
       $deleteBtn.addEventListener("click", Event.delete);
+
+      // check if todo is completed or not
+      if (todo.isCompleted) {
+        $task.classList.add("completed");
+        $checkbox.checked = true;
+      }
 
       $todoElement.append($checkbox, $task, $deleteBtn);
 

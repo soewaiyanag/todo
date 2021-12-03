@@ -73,6 +73,9 @@ main {
   background-color: transparent;
 
   border-radius: 50%;
+}
+
+.circle {
   pointer-events: none;
 }
 
@@ -139,15 +142,8 @@ main {
     cursor: pointer;
   }
   .check {
-    $size: 25px;
-    height: $size;
-    width: $size;
-    position: relative;
-    appearance: none;
-    background-color: transparent;
     border: 2px solid var(--border-clr);
     border-radius: 50%;
-    pointer-events: none;
     &::before {
       content: url(../../images/icon-check.svg);
       position: absolute;
