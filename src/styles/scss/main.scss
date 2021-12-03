@@ -7,6 +7,27 @@
   box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    --header-bg-img: url("../../images/bg-desktop-dark.jpg");
+    --main-bg-clr: hsl(235, 21%, 11%);
+    --todo-bg-clr: hsl(235, 24%, 19%);
+    --border-clr: hsl(233, 14%, 35%);
+    --text-pri: hsl(234, 39%, 85%);
+    --text-sec: hsl(234, 11%, 52%);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --header-bg-img: url("../../images/bg-desktop-light.jpg");
+    --main-bg-clr: hsl(236, 33%, 92%);
+    --todo-bg-clr: hsl(0, 0%, 98%);
+    --border-clr: hsl(233, 11%, 84%);
+    --text-pri: hsl(235, 19%, 35%);
+    --text-sec: hsl(236, 9%, 61%);
+  }
+}
+
 :root {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
@@ -214,13 +235,13 @@ main {
       width: 100%;
       border-radius: 10px;
     }
-    input[type="radio"] {
+    .filter {
       display: none;
     }
-    input[type="radio"]:checked + .filter {
+    .filter:checked + .filter-label {
       color: hsl(220, 98%, 61%);
     }
-    .filter {
+    .filter-label {
       cursor: pointer;
     }
   }

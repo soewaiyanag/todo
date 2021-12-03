@@ -2,6 +2,7 @@
 import { idGenerator } from "./idGenerator";
 import "../styles/scss/main.scss";
 import "./dark_light_toggle";
+import "./filter";
 
 let todos = [];
 
@@ -34,7 +35,7 @@ class Event {
       return todo.id !== Number(elementId);
     });
     UI.clean();
-    UI.showTodoElements();
+    UI.showTodoElements(todoFilter(filter));
   }
   static toggleComplete() {
     const elementId = this.parentElement.id;
@@ -47,23 +48,45 @@ class Event {
         }
       }
     });
-    console.log(todos);
     UI.clean();
-    UI.showTodoElements();
+    UI.showTodoElements(todoFilter(filter));
   }
 }
 
+const $filters = document.querySelectorAll(".filter");
+let filter = "all";
+$filters.forEach(($filter) => {
+  $filter.addEventListener("click", () => {
+    filter = $filter.id;
+    UI.clean();
+    UI.showTodoElements(todoFilter(filter));
+  });
+});
+
+function todoFilter(value) {
+  if (value === "active") {
+    return todos.filter((todo) => {
+      return !todo.isCompleted;
+    });
+  } else if (value === "completed") {
+    return todos.filter((todo) => {
+      return todo.isCompleted;
+    });
+  } else {
+    return todos;
+  }
+}
 class UI {
   static clean() {
-    const todoParent = document.querySelector(".todo-elements");
-    while (todoParent.firstChild) {
-      todoParent.removeChild(todoParent.firstChild);
+    const $todoParent = document.querySelector(".todo-elements");
+    while ($todoParent.firstChild) {
+      $todoParent.removeChild($todoParent.firstChild);
     }
   }
 
-  static showTodoElements() {
-    for (let i = 0; i < todos.length; i++) {
-      const todo = todos[i];
+  static showTodoElements(todoElements) {
+    for (let i = 0; i < todoElements.length; i++) {
+      const todo = todoElements[i];
       const $todoElement = document.createElement("div");
       const $checkbox = document.createElement("input");
       const $task = document.createElement("li");
@@ -102,7 +125,7 @@ class UI {
       todos.push(new Todo(Input.value(), id()));
       Input.reset();
       UI.clean();
-      UI.showTodoElements();
+      UI.showTodoElements(todoFilter(filter));
     }
   });
 })();

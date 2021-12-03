@@ -38,6 +38,26 @@
   box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    --header-bg-img: url("../../images/bg-desktop-dark.jpg");
+    --main-bg-clr: hsl(235, 21%, 11%);
+    --todo-bg-clr: hsl(235, 24%, 19%);
+    --border-clr: hsl(233, 14%, 35%);
+    --text-pri: hsl(234, 39%, 85%);
+    --text-sec: hsl(234, 11%, 52%);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --header-bg-img: url("../../images/bg-desktop-light.jpg");
+    --main-bg-clr: hsl(236, 33%, 92%);
+    --todo-bg-clr: hsl(0, 0%, 98%);
+    --border-clr: hsl(233, 11%, 84%);
+    --text-pri: hsl(235, 19%, 35%);
+    --text-sec: hsl(236, 9%, 61%);
+  }
+}
 :root {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
@@ -102,6 +122,9 @@ main {
   appearance: none;
   background-color: transparent;
   border-radius: 50%;
+}
+
+.circle {
   pointer-events: none;
 }
 
@@ -134,13 +157,13 @@ main {
   margin-left: 0.6rem;
 }
 
-.todo-item-container {
+.todo-element-container {
   background-color: var(--todo-bg-clr);
   border-radius: 10px;
   transition: background-color 200ms, color 200ms;
 }
 
-.todo-item {
+.todo-element {
   opacity: 1;
   transition: opacity 250ms;
   user-select: none;
@@ -151,29 +174,23 @@ main {
   padding: 1rem;
   border-bottom: 0.1rem solid var(--text-sec);
 }
-.todo-item .todo {
+.todo-element .task {
   cursor: pointer;
   font-weight: 600;
 }
-.todo-item .todo:hover {
+.todo-element .task:hover {
   color: var(--text-hover);
 }
-.todo-item .check,
-.todo-item .delete {
+.todo-element .check,
+.todo-element .delete {
   justify-self: center;
   cursor: pointer;
 }
-.todo-item .check {
-  height: 25px;
-  width: 25px;
-  position: relative;
-  appearance: none;
-  background-color: transparent;
+.todo-element .check {
   border: 2px solid var(--border-clr);
   border-radius: 50%;
-  pointer-events: none;
 }
-.todo-item .check::before {
+.todo-element .check::before {
   content: url(../../images/icon-check.svg);
   position: absolute;
   top: 50%;
@@ -181,17 +198,17 @@ main {
   transform: translate(-50%, -50%) scale(1);
   display: none;
 }
-.todo-item .check:checked {
+.todo-element .check:checked {
   background: linear-gradient(145deg, #57ddff, #c058f3);
   border: none;
 }
-.todo-item .check:checked::before {
+.todo-element .check:checked::before {
   display: block;
 }
-.todo-item:hover > .delete {
+.todo-element:hover > .delete {
   opacity: 1;
 }
-.todo-item .delete {
+.todo-element .delete {
   appearance: none;
   border: none;
   background-color: transparent;
@@ -201,15 +218,15 @@ main {
   opacity: 0;
   transition: color 150ms, opacity 300ms;
 }
-.todo-item .delete:hover {
+.todo-element .delete:hover {
   color: var(--text-pri);
 }
 @media (max-width: 789px) {
-  .todo-item .delete {
+  .todo-element .delete {
     opacity: 1;
   }
 }
-.todo-item.deleted {
+.todo-element.deleted {
   opacity: 0;
 }
 
