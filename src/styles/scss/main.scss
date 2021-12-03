@@ -108,13 +108,13 @@ main {
   }
 }
 
-.todo-item-container {
+.todo-element-container {
   background-color: var(--todo-bg-clr);
   border-radius: 10px;
   @include transition;
 }
 
-.todo-item {
+.todo-element {
   opacity: 1;
   transition: opacity 250ms;
   user-select: none;
@@ -126,7 +126,7 @@ main {
   padding: 1rem;
   border-bottom: 0.1rem solid var(--text-sec);
 
-  .todo {
+  .task {
     cursor: pointer;
     font-weight: 600;
     &:hover {

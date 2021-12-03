@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/07696ff9fe.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Frontend Mentor | Todo app</title>
+    <script defer="defer" src="bundle.js"></script>
+  </head>
+  <body class="dark-theme">
+    <header>
+      <div class="header container">
+        <h1>TODO</h1>
+        <img class="theme-swicher" src="./images/icon-sun.svg" />
+      </div>
+    </header>
+    <main>
+      <div class="main container">
+        <section class="todo-section">
+          <form onsubmit="return false">
+            <input class="circle" type="checkbox" name="todo" />
+            <input class="todo-input" placeholder="Create a new todo" />
+          </form>
+          <div class="todo-element-container">
+            <section class="todo-elements">
+              <!-- <div class="todo-element completed">
+                <input
+                  type="checkbox"
+                  class="check"
+                  checked="checked"
+                  autocomplete="off"
+                />
+                <li class="task">Complete online JavaScript course</li>
+                <i class="bi bi-x delete"></i>
+              </div> -->
+            </section>
+            <section class="todo-footer">
+              <li class="left-item">5 items left</li>
+              <ul class="todo-filter">
+                <input
+                  type="radio"
+                  name="filter"
+                  id="filter-all"
+                  checked="checked"
+                  autocomplete="off"
+                />
+                <label class="filter" for="filter-all">All</label>
+                <input
+                  type="radio"
+                  name="filter"
+                  id="filter-active"
+                  autocomplete="off"
+                />
+                <label class="filter" for="filter-active">Active</label>
+                <input
+                  type="radio"
+                  name="filter"
+                  id="filter-completed"
+                  autocomplete="off"
+                />
+                <label class="filter" for="filter-completed">Completed</label>
+              </ul>
+              <span class="clear-completed">Clear Completed</span>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
