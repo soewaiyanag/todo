@@ -1,12 +1,12 @@
 "use strict";
 import { idGenerator } from "./idGenerator";
+import { generate as generateId } from "shortid";
 import "../styles/scss/main.scss";
 import "./dark_light_toggle";
 import "./filter";
 
 let todos = [];
-
-window.addEventListener("DOMContentLoaded", function () {
+let remainTodos = window.addEventListener("DOMContentLoaded", function () {
   getTodo();
 });
 
@@ -36,14 +36,14 @@ class Event {
   static delete() {
     const elementId = this.parentElement.id;
     todos = todos.filter((todo) => {
-      return todo.id !== Number(elementId);
+      return todo.id !== elementId;
     });
     setTodo();
   }
   static toggleComplete() {
     const elementId = this.parentElement.id;
     todos.forEach((todo) => {
-      if (todo.id === Number(elementId)) {
+      if (todo.id === elementId) {
         if (todo.isCompleted) {
           todo.isCompleted = false;
         } else {
@@ -64,7 +64,7 @@ $filters.forEach(($filter) => {
   });
 });
 
-function todoFilter(value) {
+function getTodos(value) {
   if (value === "active") {
     return todos.filter((todo) => {
       return !todo.isCompleted;
@@ -78,9 +78,15 @@ function todoFilter(value) {
   }
 }
 
+document.querySelector(".clear-completed").addEventListener("click", () => {
+  todos = getTodos("active");
+  setTodo();
+});
+
 function setTodo() {
   UI.clean();
-  UI.showTodoElements(todoFilter(filter));
+  UI.showTodoElements(getTodos(filter));
+  UI.showRemainTodos();
   localStorage.clear();
   localStorage.setItem("todo-list", JSON.stringify(todos));
 }
@@ -88,9 +94,14 @@ function setTodo() {
 function getTodo() {
   todos = JSON.parse(localStorage.getItem("todo-list")) ?? [];
   UI.clean();
-  UI.showTodoElements(todoFilter(filter));
+  UI.showTodoElements(getTodos(filter));
+  UI.showRemainTodos();
 }
 class UI {
+  static showRemainTodos() {
+    document.querySelector(".remain-todo-count").textContent =
+      getTodos("active").length;
+  }
   static clean() {
     const $todoParent = document.querySelector(".todo-elements");
     while ($todoParent.firstChild) {
@@ -133,10 +144,9 @@ class UI {
 }
 
 (function () {
-  const id = idGenerator();
   Input.$todoInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && Input.value() !== "") {
-      todos.push(new Todo(Input.value(), id()));
+      todos.unshift(new Todo(Input.value(), generateId()));
       Input.reset();
       setTodo();
     }
