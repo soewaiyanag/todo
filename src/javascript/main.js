@@ -1,28 +1,14 @@
 "use strict";
-import { idGenerator } from "./idGenerator";
 import { generate as generateId } from "shortid";
 import "../styles/scss/main.scss";
 import "./dark_light_toggle";
 import "./filter";
 
-let todos = [];
+// VARIABLES
+
 const $filters = document.querySelectorAll(".filter");
+let todos = [];
 let filter = "all";
-window.addEventListener("DOMContentLoaded", function () {
-  getTodo();
-});
-
-$filters.forEach(($filter) => {
-  $filter.addEventListener("click", () => {
-    filter = $filter.id;
-    setTodo();
-  });
-});
-
-document.querySelector(".clear-completed").addEventListener("click", () => {
-  todos = getTodos("active");
-  setTodo();
-});
 
 // CLASSES
 
@@ -69,39 +55,12 @@ class Event {
   }
 }
 
-function getTodos(value) {
-  if (value === "active") {
-    return todos.filter((todo) => {
-      return !todo.isCompleted;
-    });
-  } else if (value === "completed") {
-    return todos.filter((todo) => {
-      return todo.isCompleted;
-    });
-  } else {
-    return todos;
-  }
-}
-
-function setTodo() {
-  UI.clean();
-  UI.showTodoElements(getTodos(filter));
-  UI.showRemainTodos();
-  localStorage.clear();
-  localStorage.setItem("todo-list", JSON.stringify(todos));
-}
-
-function getTodo() {
-  todos = JSON.parse(localStorage.getItem("todo-list")) ?? [];
-  UI.clean();
-  UI.showTodoElements(getTodos(filter));
-  UI.showRemainTodos();
-}
 class UI {
-  static showRemainTodos() {
+  static countLeftTodos() {
     document.querySelector(".remain-todo-count").textContent =
       getTodos("active").length;
   }
+
   static clean() {
     const $todoParent = document.querySelector(".todo-elements");
     while ($todoParent.firstChild) {
@@ -115,7 +74,7 @@ class UI {
       const $todoElement = document.createElement("div");
       const $checkbox = document.createElement("input");
       const $task = document.createElement("li");
-      const $deleteBtn = document.createElement("i");
+      const $deleteBtn = document.createElement("img");
 
       $todoElement.className = "todo-element";
       $todoElement.id = todo.id;
@@ -127,7 +86,9 @@ class UI {
       $task.className = "task";
       $task.textContent = todo.task;
 
-      $deleteBtn.className = "bi bi-x delete";
+      $deleteBtn.className = "delete";
+      $deleteBtn.src = "./images/icon-cross.svg";
+
       $deleteBtn.addEventListener("click", Event.delete);
 
       // check if todo is completed or not
@@ -143,6 +104,37 @@ class UI {
   }
 }
 
+// FUNCTIONS
+
+const getTodos = (value) => {
+  if (value === "active") {
+    return todos.filter((todo) => {
+      return !todo.isCompleted;
+    });
+  } else if (value === "completed") {
+    return todos.filter((todo) => {
+      return todo.isCompleted;
+    });
+  } else {
+    return todos;
+  }
+};
+
+const setTodo = () => {
+  UI.clean();
+  UI.showTodoElements(getTodos(filter));
+  UI.countLeftTodos();
+  localStorage.clear();
+  localStorage.setItem("todo-list", JSON.stringify(todos));
+};
+
+const getTodo = () => {
+  todos = JSON.parse(localStorage.getItem("todo-list")) ?? [];
+  UI.clean();
+  UI.showTodoElements(getTodos(filter));
+  UI.countLeftTodos();
+};
+
 (function () {
   Input.$todoInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && Input.value() !== "") {
@@ -152,3 +144,21 @@ class UI {
     }
   });
 })();
+
+// EVENTS
+
+window.addEventListener("DOMContentLoaded", () => {
+  getTodo();
+});
+
+document.querySelector(".clear-completed").addEventListener("click", () => {
+  todos = getTodos("active");
+  setTodo();
+});
+
+$filters.forEach(($filter) => {
+  $filter.addEventListener("click", () => {
+    filter = $filter.id;
+    setTodo();
+  });
+});

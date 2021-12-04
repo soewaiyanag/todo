@@ -96,10 +96,6 @@ main {
   border-radius: 50%;
 }
 
-.circle {
-  pointer-events: none;
-}
-
 .todo-section {
   transform: translateY(-10rem);
 
@@ -111,13 +107,17 @@ main {
     display: grid;
     grid-template-columns: 50px 1fr;
     grid-template-rows: 40px;
+    gap: 0.6rem;
     align-items: center;
     padding: 1rem;
+
     @include transition;
 
     .circle {
+      pointer-events: none;
       margin-left: 0.8rem;
       border: 2px solid var(--border-clr);
+      justify-self: center;
     }
     input {
       color: var(--text-pri);
@@ -126,8 +126,6 @@ main {
       border: none;
       outline: none;
       background-color: transparent;
-      // to align with others todo
-      margin-left: 0.6rem;
     }
   }
 }
@@ -185,23 +183,15 @@ main {
     opacity: 1;
   }
   .delete {
-    appearance: none;
-    border: none;
-    background-color: transparent;
-    width: 25px;
-    font-size: 2.5rem;
-    color: var(--text-sec);
     opacity: 0;
-    transition: color 150ms, opacity 300ms;
+    filter: none;
+    transition: opacity 300ms, filter 300ms;
     &:hover {
-      color: var(--text-pri);
+      filter: invert(75%);
     }
     @include media-breakpoint-down {
       opacity: 1;
     }
-  }
-  &.deleted {
-    opacity: 0;
   }
 }
 
