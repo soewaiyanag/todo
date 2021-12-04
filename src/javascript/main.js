@@ -6,8 +6,22 @@ import "./dark_light_toggle";
 import "./filter";
 
 let todos = [];
-let remainTodos = window.addEventListener("DOMContentLoaded", function () {
+const $filters = document.querySelectorAll(".filter");
+let filter = "all";
+window.addEventListener("DOMContentLoaded", function () {
   getTodo();
+});
+
+$filters.forEach(($filter) => {
+  $filter.addEventListener("click", () => {
+    filter = $filter.id;
+    setTodo();
+  });
+});
+
+document.querySelector(".clear-completed").addEventListener("click", () => {
+  todos = getTodos("active");
+  setTodo();
 });
 
 // CLASSES
@@ -55,15 +69,6 @@ class Event {
   }
 }
 
-const $filters = document.querySelectorAll(".filter");
-let filter = "all";
-$filters.forEach(($filter) => {
-  $filter.addEventListener("click", () => {
-    filter = $filter.id;
-    setTodo();
-  });
-});
-
 function getTodos(value) {
   if (value === "active") {
     return todos.filter((todo) => {
@@ -77,11 +82,6 @@ function getTodos(value) {
     return todos;
   }
 }
-
-document.querySelector(".clear-completed").addEventListener("click", () => {
-  todos = getTodos("active");
-  setTodo();
-});
 
 function setTodo() {
   UI.clean();
