@@ -208,6 +208,9 @@ main {
       color: var(--text-hover);
     }
   }
+  .clear-completed {
+    @include removeBlueFilter;
+  }
   .todo-filter {
     position: absolute;
     left: 50%;
