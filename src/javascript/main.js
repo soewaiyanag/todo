@@ -153,6 +153,9 @@ const addToLocalStorage = () => {
 (function () {
   Input.$todoInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && Input.value() !== "") {
+      clickSound.currentTime = 0;
+      clickSound.play();
+
       todos.unshift(new Todo(Input.value(), generateId()));
       Input.reset();
       UI.all();

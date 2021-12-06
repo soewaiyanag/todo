@@ -200,17 +200,20 @@ main {
   justify-content: space-between;
   padding: 1.5rem 2rem;
   user-select: none;
-  span,
-  li {
-    cursor: pointer;
-    transition: 200ms color;
-    &:hover {
-      color: var(--text-hover);
-    }
-  }
-  .clear-completed {
+
+  span {
+    color: var(--text-pri);
     @include removeBlueFilter;
   }
+
+  .left-item {
+    cursor: default;
+  }
+
+  .clear-completed {
+    cursor: pointer;
+  }
+
   .todo-filter {
     position: absolute;
     left: 50%;
@@ -227,10 +230,10 @@ main {
       width: 100%;
       border-radius: 10px;
     }
-    .filter {
+    input.filter {
       display: none;
     }
-    .filter:checked + .filter-label {
+    input.filter:checked + .filter-label {
       color: hsl(220, 98%, 61%);
     }
     .filter-label {
