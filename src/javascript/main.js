@@ -4,12 +4,12 @@ import "./dark_light_toggle";
 import "./filter";
 import { generate as generateId } from "shortid";
 import completeMp3 from "../complete.mp3";
-import deleteMp3 from "../delete.mp3";
+import clickMP3 from "../delete.mp3";
 
 // VARIABLES
 
 const completeSound = new Audio(completeMp3);
-const deleteSound = new Audio(deleteMp3);
+const clickSound = new Audio(clickMP3);
 
 const $filters = document.querySelectorAll(".filter");
 let todos = [];
@@ -55,8 +55,8 @@ class Input {
 
 class Event {
   static delete() {
-    deleteSound.currentTime = 0;
-    deleteSound.play();
+    clickSound.currentTime = 0;
+    clickSound.play();
 
     const elementId = this.parentElement.id;
     todos = todos.filter((todo) => {
@@ -169,7 +169,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 document.querySelector(".clear-completed").addEventListener("click", () => {
-  deleteSound.play();
+  clickSound.currentTime = 0;
+  clickSound.play();
+
   todos = Todos.get("active");
   UI.all();
   addToLocalStorage();
@@ -177,6 +179,9 @@ document.querySelector(".clear-completed").addEventListener("click", () => {
 
 $filters.forEach(($filter) => {
   $filter.addEventListener("click", () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+
     filter = $filter.id;
     UI.all();
     addToLocalStorage();

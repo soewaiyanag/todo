@@ -69,6 +69,7 @@ header {
   height: $size;
   //
   cursor: pointer;
+  @include removeBlueFilter;
 }
 
 main {
@@ -156,6 +157,7 @@ main {
   .delete {
     justify-self: center;
     cursor: pointer;
+    @include removeBlueFilter;
   }
   .check {
     border: 2px solid var(--border-clr);
@@ -197,6 +199,7 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 2rem;
+  user-select: none;
   span,
   li {
     cursor: pointer;
@@ -213,7 +216,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    user-select: none;
     @include media-breakpoint-down {
       top: 6rem;
       background-color: var(--todo-bg-clr);
@@ -230,6 +232,7 @@ main {
     }
     .filter-label {
       cursor: pointer;
+      @include removeBlueFilter;
     }
   }
 }
