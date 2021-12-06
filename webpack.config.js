@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -13,6 +12,10 @@ module.exports = {
       {
         test: /\.(sass|scss)$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.mp3$/,
+        loader: "file-loader",
       },
     ],
   },

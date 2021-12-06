@@ -149,11 +149,8 @@ main {
   border-bottom: 0.1rem solid var(--text-sec);
 
   .task {
-    cursor: pointer;
+    cursor: default;
     font-weight: 600;
-    &:hover {
-      color: var(--text-hover);
-    }
   }
   .check,
   .delete {

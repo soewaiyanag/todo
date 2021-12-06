@@ -1,10 +1,15 @@
 "use strict";
-import { generate as generateId } from "shortid";
 import "../styles/scss/main.scss";
 import "./dark_light_toggle";
 import "./filter";
+import { generate as generateId } from "shortid";
+import completeMp3 from "../complete.mp3";
+import deleteMp3 from "../delete.mp3";
 
 // VARIABLES
+
+const completeSound = new Audio(completeMp3);
+const deleteSound = new Audio(deleteMp3);
 
 const $filters = document.querySelectorAll(".filter");
 let todos = [];
@@ -17,6 +22,22 @@ class Todo {
     this.id = id;
     this.task = task;
     this.isCompleted = false;
+  }
+}
+
+class Todos {
+  static get(filter) {
+    if (filter === "active") {
+      return todos.filter((todo) => {
+        return !todo.isCompleted;
+      });
+    } else if (filter === "completed") {
+      return todos.filter((todo) => {
+        return todo.isCompleted;
+      });
+    } else {
+      return todos;
+    }
   }
 }
 
@@ -34,12 +55,18 @@ class Input {
 
 class Event {
   static delete() {
+    deleteSound.currentTime = 0;
+    deleteSound.play();
+
     const elementId = this.parentElement.id;
     todos = todos.filter((todo) => {
       return todo.id !== elementId;
     });
-    setTodo();
+
+    UI.all();
+    addToLocalStorage();
   }
+
   static toggleComplete() {
     const elementId = this.parentElement.id;
     todos.forEach((todo) => {
@@ -48,17 +75,29 @@ class Event {
           todo.isCompleted = false;
         } else {
           todo.isCompleted = true;
+
+          completeSound.currentTime = 0;
+          completeSound.play();
         }
       }
     });
-    setTodo();
+
+    UI.all();
+    addToLocalStorage();
   }
 }
 
 class UI {
+  // run all the UI methods
+  static all() {
+    this.clean();
+    this.showTodoElements(Todos.get(filter));
+    this.countLeftTodos();
+  }
+
   static countLeftTodos() {
     document.querySelector(".remain-todo-count").textContent =
-      getTodos("active").length;
+      Todos.get("active").length;
   }
 
   static clean() {
@@ -106,33 +145,9 @@ class UI {
 
 // FUNCTIONS
 
-const getTodos = (value) => {
-  if (value === "active") {
-    return todos.filter((todo) => {
-      return !todo.isCompleted;
-    });
-  } else if (value === "completed") {
-    return todos.filter((todo) => {
-      return todo.isCompleted;
-    });
-  } else {
-    return todos;
-  }
-};
-
-const setTodo = () => {
-  UI.clean();
-  UI.showTodoElements(getTodos(filter));
-  UI.countLeftTodos();
+const addToLocalStorage = () => {
   localStorage.clear();
   localStorage.setItem("todo-list", JSON.stringify(todos));
-};
-
-const getTodo = () => {
-  todos = JSON.parse(localStorage.getItem("todo-list")) ?? [];
-  UI.clean();
-  UI.showTodoElements(getTodos(filter));
-  UI.countLeftTodos();
 };
 
 (function () {
@@ -140,7 +155,8 @@ const getTodo = () => {
     if (e.key === "Enter" && Input.value() !== "") {
       todos.unshift(new Todo(Input.value(), generateId()));
       Input.reset();
-      setTodo();
+      UI.all();
+      addToLocalStorage();
     }
   });
 })();
@@ -148,17 +164,20 @@ const getTodo = () => {
 // EVENTS
 
 window.addEventListener("DOMContentLoaded", () => {
-  getTodo();
+  todos = JSON.parse(localStorage.getItem("todo-list")) ?? [];
+  UI.all();
 });
 
 document.querySelector(".clear-completed").addEventListener("click", () => {
-  todos = getTodos("active");
-  setTodo();
+  todos = Todos.get("active");
+  UI.all();
+  addToLocalStorage();
 });
 
 $filters.forEach(($filter) => {
   $filter.addEventListener("click", () => {
     filter = $filter.id;
-    setTodo();
+    UI.all();
+    addToLocalStorage();
   });
 });
