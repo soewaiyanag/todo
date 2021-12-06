@@ -169,6 +169,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 document.querySelector(".clear-completed").addEventListener("click", () => {
+  deleteSound.play();
   todos = Todos.get("active");
   UI.all();
   addToLocalStorage();
