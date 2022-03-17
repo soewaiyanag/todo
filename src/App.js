@@ -6,8 +6,17 @@ import lightBg from "./assets/bg-desktop-light.jpg";
 import lightSwitch from "./assets/icon-moon.svg";
 import darkSwitch from "./assets/icon-sun.svg";
 import Container from "./styles/Container";
+import { useContext } from "react";
+import DarkContext from "./context/DarkContext";
 
-const theme = {
+const darkTheme = {
+  icons: {
+    headerBg: darkBg,
+    switch: darkSwitch,
+  },
+};
+
+const lightTheme = {
   icons: {
     headerBg: lightBg,
     switch: lightSwitch,
@@ -15,6 +24,8 @@ const theme = {
 };
 
 function App() {
+  const { isDark } = useContext(DarkContext);
+  const theme = isDark ? darkTheme : lightTheme;
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

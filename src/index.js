@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { DarkProvider } from "./context/DarkContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DarkProvider>
+      <App />
+    </DarkProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
 
     img {
       width: 1.4rem;
+      cursor: pointer;
     }
   }
 `;
