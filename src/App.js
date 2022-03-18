@@ -15,6 +15,7 @@ const darkTheme = {
     switch: darkSwitch,
   },
   colors: {
+    main: "hsl(235, 21%, 11%)",
     box: "hsl(235, 24%, 19%)",
     border: "hsl(233, 14%, 35%)",
     primaryText: "hsl(234, 39%, 85%)",
@@ -27,6 +28,7 @@ const lightTheme = {
     switch: lightSwitch,
   },
   colors: {
+    main: "hsl(236, 33%, 92%)",
     box: "hsl(0, 0%, 98%)",
     border: "hsl(233, 11%, 84%)",
     primaryText: "hsl(235, 19%, 35%)",

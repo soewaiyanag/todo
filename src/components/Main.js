@@ -1,13 +1,14 @@
 import Container from "../styles/Container";
+import StyledMain from "../styles/Main.styled";
 import TodoForm from "./TodoForm";
 
 const Main = () => {
   return (
-    <main>
+    <StyledMain>
       <Container>
         <TodoForm />
       </Container>
-    </main>
+    </StyledMain>
   );
 };
 
