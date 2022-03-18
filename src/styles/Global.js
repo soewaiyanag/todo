@@ -9,9 +9,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    #root {
+    body, input {
         font-family: "Josefin Sans", sans-serif;
     }
+
 `;
 
 export default GlobalStyle;

@@ -5,14 +5,19 @@ import darkBg from "./assets/bg-desktop-dark.jpg";
 import lightBg from "./assets/bg-desktop-light.jpg";
 import lightSwitch from "./assets/icon-moon.svg";
 import darkSwitch from "./assets/icon-sun.svg";
-import Container from "./styles/Container";
 import { useContext } from "react";
 import DarkContext from "./context/DarkContext";
+import Main from "./components/Main";
 
 const darkTheme = {
   icons: {
     headerBg: darkBg,
     switch: darkSwitch,
+  },
+  colors: {
+    box: "hsl(235, 24%, 19%)",
+    border: "hsl(233, 14%, 35%)",
+    primaryText: "hsl(234, 39%, 85%)",
   },
 };
 
@@ -20,6 +25,11 @@ const lightTheme = {
   icons: {
     headerBg: lightBg,
     switch: lightSwitch,
+  },
+  colors: {
+    box: "hsl(0, 0%, 98%)",
+    border: "hsl(233, 11%, 84%)",
+    primaryText: "hsl(235, 19%, 35%)",
   },
 };
 
@@ -30,9 +40,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <>
-        <Header>
-          <Container></Container>
-        </Header>
+        <Header />
+        <Main />
       </>
     </ThemeProvider>
   );
