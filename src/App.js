@@ -9,6 +9,12 @@ import { useContext } from "react";
 import DarkContext from "./context/DarkContext";
 import Main from "./components/Main";
 
+const staticTheme = {
+  sizes: {
+    headerHeight: "14rem",
+  },
+};
+
 const darkTheme = {
   icons: {
     headerBg: darkBg,
@@ -38,8 +44,10 @@ const lightTheme = {
 function App() {
   const { isDark } = useContext(DarkContext);
   const theme = isDark ? darkTheme : lightTheme;
+  const commonTheme = { ...theme, ...staticTheme };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={commonTheme}>
       <GlobalStyle />
       <>
         <Header />

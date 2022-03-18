@@ -6,7 +6,7 @@ const TodoForm = () => {
   return (
     <StyledTodoForm>
       <Checkbox readOnly disabled />
-      <TodoInput placeholder="Create a new todo" />
+      <TodoInput placeholder="Create a new todo..." />
     </StyledTodoForm>
   );
 };

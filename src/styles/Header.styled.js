@@ -5,7 +5,7 @@ const StyledHeader = styled.header`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30%;
-  min-height: 14rem;
+  min-height: ${({ theme }) => theme.sizes.headerHeight};
 
   /* Container === div */
   div {
