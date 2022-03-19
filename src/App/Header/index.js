@@ -1,6 +1,6 @@
 import StyledHeader from "./styled";
 import Container from "../../shared/Container";
-import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 const Header = () => {
   return (

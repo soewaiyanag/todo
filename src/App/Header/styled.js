@@ -21,11 +21,6 @@ const StyledHeader = styled.header`
       color: white;
       letter-spacing: 10px;
     }
-
-    img {
-      width: 1.4rem;
-      cursor: pointer;
-    }
   }
 `;
 
