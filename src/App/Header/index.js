@@ -1,8 +1,8 @@
-import StyledHeader from "../styles/Header.styled";
+import StyledHeader from "./styled";
 import Container from "../styles/Container";
 import { useTheme } from "styled-components";
 import { useContext } from "react";
-import DarkContext from "../context/DarkContext";
+import DarkContext from "../../context/DarkContext";
 
 const Header = () => {
   const theme = useTheme(); // useTheme provide the current theme outside of styled components

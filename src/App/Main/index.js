@@ -1,6 +1,6 @@
-import Container from "../styles/Container";
-import StyledMain from "../styles/Main.styled";
-import TodoForm from "./TodoForm";
+import Container from "../../shared/Container";
+import StyledMain from "./styled";
+import TodoForm from "../TodoForm";
 
 const Main = () => {
   return (
