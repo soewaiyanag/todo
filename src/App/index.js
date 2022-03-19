@@ -8,6 +8,9 @@ import DarkContext from "../context/DarkContext";
 import GlobalStyle from "../shared/Global";
 import Header from "./Header";
 import Main from "./Main";
+import { store } from "../store/store";
+
+console.log(store.getState());
 
 const staticTheme = {
   sizes: {

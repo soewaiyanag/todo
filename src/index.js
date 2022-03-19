@@ -3,11 +3,15 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DarkProvider } from "./context/DarkContext";
+import { store } from "./store/store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
   <React.StrictMode>
     <DarkProvider>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </DarkProvider>
   </React.StrictMode>,
   document.getElementById("root")
