@@ -12,6 +12,7 @@ import Main from "./components/Main";
 const staticTheme = {
   sizes: {
     headerHeight: "14rem",
+    borderRadius: "5px",
   },
 };
 
