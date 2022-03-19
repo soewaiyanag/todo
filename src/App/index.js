@@ -1,13 +1,13 @@
-import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./styles/Global";
-import Header from "./components/Header";
-import darkBg from "./assets/bg-desktop-dark.jpg";
-import lightBg from "./assets/bg-desktop-light.jpg";
-import lightSwitch from "./assets/icon-moon.svg";
-import darkSwitch from "./assets/icon-sun.svg";
 import { useContext } from "react";
-import DarkContext from "./context/DarkContext";
-import Main from "./components/Main";
+import { ThemeProvider } from "styled-components";
+import darkBg from "../assets/bg-desktop-dark.jpg";
+import lightBg from "../assets/bg-desktop-light.jpg";
+import lightSwitch from "../assets/icon-moon.svg";
+import darkSwitch from "../assets/icon-sun.svg";
+import DarkContext from "../context/DarkContext";
+import GlobalStyle from "../shared/Global";
+import Header from "./Header";
+import Main from "./Main";
 
 const staticTheme = {
   sizes: {

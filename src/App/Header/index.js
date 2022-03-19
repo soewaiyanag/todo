@@ -1,5 +1,5 @@
 import StyledHeader from "./styled";
-import Container from "../styles/Container";
+import Container from "../../shared/Container";
 import { useTheme } from "styled-components";
 import { useContext } from "react";
 import DarkContext from "../../context/DarkContext";

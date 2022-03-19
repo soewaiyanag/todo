@@ -1,5 +1,5 @@
-import Checkbox from "../../shared/Checkbox.styled";
-import StyledTodoForm from "../../styles/TodoForm.styled";
+import Checkbox from "../../shared/Checkbox";
+import StyledTodoForm from "./styled";
 import TodoInput from "../TodoInput";
 
 const TodoForm = () => {
