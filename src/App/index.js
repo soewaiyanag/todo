@@ -8,9 +8,6 @@ import DarkContext from "../context/DarkContext";
 import GlobalStyle from "../shared/Global";
 import Header from "./Header";
 import Main from "./Main";
-import { store } from "../store/store";
-
-console.log(store.getState());
 
 const staticTheme = {
   sizes: {
@@ -48,15 +45,13 @@ const lightTheme = {
 function App() {
   const { isDark } = useContext(DarkContext);
   const theme = isDark ? darkTheme : lightTheme;
-  const commonTheme = { ...theme, ...staticTheme };
+  const rootTheme = { ...theme, ...staticTheme };
 
   return (
-    <ThemeProvider theme={commonTheme}>
+    <ThemeProvider theme={rootTheme}>
       <GlobalStyle />
-      <>
-        <Header />
-        <Main />
-      </>
+      <Header />
+      <Main />
     </ThemeProvider>
   );
 }

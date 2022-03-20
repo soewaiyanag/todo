@@ -5,7 +5,11 @@ const StyledMain = styled.main`
   min-height: calc(100vh - ${({ theme }) => theme.sizes.headerHeight});
 
   & > div {
-    transform: translateY(-200%);
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 
