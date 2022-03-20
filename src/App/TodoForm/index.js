@@ -6,22 +6,26 @@ import { add } from "../../store/todoSlice";
 import { useState } from "react";
 
 const TodoForm = () => {
-  const [text, setText] = useState("");
   const dispatch = useDispatch();
+  const [text, setText] = useState("");
+
+  const onKeyDownHandler = (e) => {
+    if (e.key === "Enter" && text !== "") {
+      dispatch(add({ text }));
+    }
+  };
+
+  const onChangeHandler = (e) => {
+    setText(e.target.value);
+  };
 
   return (
     <StyledTodoForm>
-      <Checkbox readOnly disabled />
+      <Checkbox readOnly />
       <TodoInput
         value={text}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            dispatch(add({ text }));
-          }
-        }}
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
+        onKeyDown={onKeyDownHandler}
+        onChange={onChangeHandler}
         placeholder="Create a new todo..."
       />
     </StyledTodoForm>

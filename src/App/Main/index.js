@@ -7,12 +7,10 @@ import Wrapper from "./Wrapper";
 const Main = () => {
   return (
     <StyledMain>
-      <Wrapper>
-        <Container>
-          <TodoForm />
-          <TodoContainer />
-        </Container>
-      </Wrapper>
+      <Container>
+        <TodoForm />
+        <TodoContainer />
+      </Container>
     </StyledMain>
   );
 };
