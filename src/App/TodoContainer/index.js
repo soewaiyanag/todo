@@ -1,13 +1,11 @@
-import { useSelector } from "react-redux";
+import TodoItems from "../TodoItems";
+import StyledTodoContainer from "./styled";
 
 const TodoContainer = () => {
-  const todos = useSelector((state) => state.todos);
   return (
-    <div>
-      {todos.map((todo) => (
-        <h1 key={todo.id}>{todo.text}</h1>
-      ))}
-    </div>
+    <StyledTodoContainer>
+      <TodoItems />
+    </StyledTodoContainer>
   );
 };
 
