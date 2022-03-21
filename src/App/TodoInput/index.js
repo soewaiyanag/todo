@@ -8,7 +8,6 @@ const TodoInput = styled.input.attrs({ type: "text" })`
   border: none;
   outline: none;
   background-color: transparent;
-  line-height: 1.4;
 `;
 
 export default TodoInput;

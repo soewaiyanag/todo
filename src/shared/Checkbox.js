@@ -9,7 +9,6 @@ const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.colors.border};
   cursor: ${(props) => (props.readOnly ? null : "pointer")};
-  margin-left: 0.8rem;
   justify-self: center;
 `;
 

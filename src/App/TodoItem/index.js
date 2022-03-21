@@ -1,7 +1,13 @@
 import StyledTodoItem from "./styled";
+import Checkbox from "../../shared/Checkbox";
 
 const TodoItem = ({ children }) => {
-  return <StyledTodoItem>{children}</StyledTodoItem>;
+  return (
+    <StyledTodoItem>
+      <Checkbox />
+      {children}
+    </StyledTodoItem>
+  );
 };
 
 export default TodoItem;
