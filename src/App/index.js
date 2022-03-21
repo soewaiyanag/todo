@@ -26,6 +26,7 @@ const darkTheme = {
     box: "hsl(235, 24%, 19%)",
     border: "hsl(233, 14%, 35%)",
     primaryText: "hsl(234, 39%, 85%)",
+    secText: "hsl(234, 11%, 52%)",
   },
 };
 
@@ -39,6 +40,7 @@ const lightTheme = {
     box: "hsl(0, 0%, 98%)",
     border: "hsl(233, 11%, 84%)",
     primaryText: "hsl(235, 19%, 35%)",
+    secText: "hsl(236, 9%, 61%)",
   },
 };
 

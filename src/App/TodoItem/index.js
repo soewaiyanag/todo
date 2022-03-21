@@ -1,10 +1,10 @@
 import StyledTodoItem from "./styled";
 import Checkbox from "../../shared/Checkbox";
 
-const TodoItem = ({ children }) => {
+const TodoItem = ({ children, id, isCompleted }) => {
   return (
-    <StyledTodoItem>
-      <Checkbox />
+    <StyledTodoItem isCompleted={isCompleted}>
+      <Checkbox checked={isCompleted} />
       {children}
     </StyledTodoItem>
   );

@@ -7,7 +7,9 @@ const TodoItems = () => {
   return (
     <div>
       {todos.map((todo) => (
-        <TodoItem key={todo.id}>{todo.text}</TodoItem>
+        <TodoItem key={todo.id} id={todo.id} isCompleted={todo.isCompleted}>
+          {todo.text}
+        </TodoItem>
       ))}
     </div>
   );
