@@ -13,6 +13,7 @@ const staticTheme = {
   sizes: {
     headerHeight: "14rem",
     borderRadius: "5px",
+    gap: "18px",
   },
 };
 

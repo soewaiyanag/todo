@@ -14,10 +14,11 @@ const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   position: relative;
   appearance: none;
   border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.colors.border};
-  cursor: ${(props) => (props.readOnly ? null : "pointer")};
   justify-self: center;
   ${({ isCompleted }) => (isCompleted ? checkedStyle : uncheckedStyle)};
+  cursor: ${(props) => !props.readOnly && "pointer"};
+  border: ${({ theme, isCompleted }) =>
+    !isCompleted && "2px solid " + theme.colors.border};
 `;
 
 export default StyledCheckbox;
