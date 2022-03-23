@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Box from "../../shared/Box";
+import Box from "shared/Box";
 
 const StyledTodoItems = styled(Box)`
   border-radius: ${({ theme }) => theme.sizes.borderRadius};

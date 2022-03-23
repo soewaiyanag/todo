@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import Checkbox from "../../shared/Checkbox";
+import Checkbox from "shared/Checkbox";
 import StyledTodoForm from "./styled";
-import TodoInput from "../TodoInput";
-import { add } from "../../store/todoSlice";
+import TodoInput from "App/TodoInput";
+import { add } from "store/todoSlice";
 import { useState } from "react";
 
 const TodoForm = () => {

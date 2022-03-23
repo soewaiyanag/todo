@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { ThemeProvider } from "styled-components";
-import DarkContext from "../context/DarkContext";
-import GlobalStyle from "../shared/Global";
+import DarkContext from "context/DarkContext";
+import GlobalStyle from "shared/Global";
 import Header from "./Header";
 import Main from "./Main";
-import { staticTheme, darkTheme, lightTheme } from "../themes";
+import { staticTheme, darkTheme, lightTheme } from "themes";
 
 function App() {
   const { isDark } = useContext(DarkContext);

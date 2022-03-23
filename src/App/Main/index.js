@@ -1,7 +1,7 @@
 import StyledMain from "./styled";
-import TodoForm from "../TodoForm";
-import TodoItems from "../TodoItems";
-import TodoContainer from "../TodoContainer/styled";
+import TodoForm from "App/TodoForm";
+import TodoItems from "App/TodoItems";
+import TodoContainer from "App/TodoContainer/styled";
 
 const Main = () => {
   return (

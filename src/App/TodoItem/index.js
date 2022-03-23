@@ -1,9 +1,9 @@
 import StyledTodoItem from "./styled";
-import Checkbox from "../../shared/Checkbox";
-import { useDispatch } from "react-redux";
-import { toggleComplete } from "../../store/todoSlice";
-import completeSoundURL from "../../assets/complete.mp3";
 import { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import Checkbox from "shared/Checkbox";
+import { toggleComplete } from "store/todoSlice";
+import completeSoundURL from "assets/complete.mp3";
 
 const TodoItem = ({ children, id, isCompleted }) => {
   const dispatch = useDispatch();

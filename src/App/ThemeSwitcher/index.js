@@ -1,8 +1,8 @@
 import { useTheme } from "styled-components";
 import { useContext, useState } from "react";
 import StyledThemeSwitcher from "./styled";
-import DarkContext from "../../context/DarkContext";
-import switchSoundURL from "../../assets/switch_on.mp3";
+import DarkContext from "context/DarkContext";
+import switchSoundURL from "assets/switch_on.mp3";
 
 const ThemeSwitcher = () => {
   const theme = useTheme(); // useTheme provide the current theme outside of styled components

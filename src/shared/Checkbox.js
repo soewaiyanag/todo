@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import checkIcon from "../assets/icon-check.svg";
+import checkIcon from "assets/icon-check.svg";
 import transition from "./transition";
 
 const checkedStyle = css`

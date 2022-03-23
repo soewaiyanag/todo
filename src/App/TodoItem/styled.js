@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Box from "../../shared/Box";
+import Box from "shared/Box";
 
 const StyledTodoItem = styled(Box)`
   color: ${({ theme, isCompleted }) =>
