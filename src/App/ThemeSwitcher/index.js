@@ -1,29 +1,33 @@
-import { useTheme } from "styled-components";
 import { useContext, useState } from "react";
 import StyledThemeSwitcher from "./styled";
 import DarkContext from "context/DarkContext";
 import switchSoundURL from "assets/switch_on.mp3";
+import lightSwitch from "assets/icon-moon.svg";
+import darkSwitch from "assets/icon-sun.svg";
+import { zoomInAnimation, zoomOutAnimation } from "shared/animation";
 
 const ThemeSwitcher = () => {
-  const theme = useTheme(); // useTheme provide the current theme outside of styled components
-  const { setIsDark } = useContext(DarkContext);
-  const [isAnimate, setIsAnimate] = useState(false);
+  const { isDark, setIsDark } = useContext(DarkContext);
+  const [switchIco, setSwitchIco] = useState(isDark ? darkSwitch : lightSwitch);
+  const [animation, setAnimation] = useState(zoomOutAnimation);
   const switchSound = new Audio(switchSoundURL);
 
   const clickHandler = () => {
     switchSound.play();
-    setIsAnimate(true);
+    setAnimation(zoomInAnimation);
     setIsDark((prev) => !prev);
   };
 
   const animationEndHandler = () => {
-    setIsAnimate(false);
+    setSwitchIco(isDark ? darkSwitch : lightSwitch);
+    setAnimation(zoomOutAnimation);
   };
 
   return (
     <StyledThemeSwitcher
-      isAnimate={isAnimate}
-      src={theme.icons.switch}
+      animationDuration={"200ms"}
+      animation={animation}
+      src={switchIco}
       alt="theme-swicher"
       onClick={clickHandler}
       onAnimationEnd={animationEndHandler}

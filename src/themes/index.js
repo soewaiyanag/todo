@@ -1,7 +1,5 @@
 import darkBg from "../assets/bg-desktop-dark.jpg";
 import lightBg from "../assets/bg-desktop-light.jpg";
-import lightSwitch from "../assets/icon-moon.svg";
-import darkSwitch from "../assets/icon-sun.svg";
 
 export const staticTheme = {
   sizes: {
@@ -15,9 +13,8 @@ export const staticTheme = {
 };
 
 export const darkTheme = {
-  icons: {
+  images: {
     headerBg: darkBg,
-    switch: darkSwitch,
   },
   colors: {
     main: "hsl(235, 21%, 11%)",
@@ -29,9 +26,8 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  icons: {
+  images: {
     headerBg: lightBg,
-    switch: lightSwitch,
   },
   colors: {
     main: "hsl(236, 33%, 92%)",

@@ -14,7 +14,8 @@ function App() {
   return (
     <>
       <ThemeProvider theme={rootTheme}>
-        <GlobalStyle />
+        {/*animationDuration is for body tag */}
+        <GlobalStyle animationDuration={"1s"} />
         <Header />
         <Main />
       </ThemeProvider>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  background-image: url(${({ theme }) => theme.icons.headerBg});
+  background-image: url(${({ theme }) => theme.images.headerBg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30%;

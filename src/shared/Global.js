@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import transition from "./transition";
+import { zoomOutAnimation } from "./animation";
 
 const GlobalStyle = createGlobalStyle`
     body {
-        ${transition}
+        ${zoomOutAnimation}
+        ${transition};
         background-color: ${({ theme }) => theme.colors.main};
     }
 
