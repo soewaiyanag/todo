@@ -24,7 +24,7 @@ const TodoItem = ({ children, id, isCompleted }) => {
         checked={!isCompleted}
         isCompleted={isCompleted}
         onChange={() => {
-          playSound(!isCompleted);
+          playSound();
           dispatch(toggleComplete({ id }));
         }}
       />

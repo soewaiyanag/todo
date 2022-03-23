@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import checkIcon from "../assets/icon-check.svg";
+import transition from "./transition";
 
 const checkedStyle = css`
   background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -17,6 +18,7 @@ const uncheckedStyle = css`
 `;
 
 const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
+  ${transition}
   height: 20px;
   aspect-ratio: 1/1;
   position: relative;
