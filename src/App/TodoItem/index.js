@@ -3,17 +3,18 @@ import Checkbox from "../../shared/Checkbox";
 import { useDispatch } from "react-redux";
 import { toggleComplete } from "../../store/todoSlice";
 import completeSoundURL from "../../assets/complete.mp3";
-
-const completeSound = new Audio(completeSoundURL);
-function playSound(isCompleted) {
-  if (isCompleted) {
-    completeSound.currentTime = 0; // to play sound continuously on click
-    completeSound.play();
-  }
-}
+import { useCallback } from "react";
 
 const TodoItem = ({ children, id, isCompleted }) => {
   const dispatch = useDispatch();
+
+  const playSound = useCallback(() => {
+    const completeSound = new Audio(completeSoundURL);
+    if (!isCompleted) {
+      completeSound.currentTime = 0; // to play sound continuously on click
+      completeSound.play();
+    }
+  }, [isCompleted]);
 
   return (
     <StyledTodoItem isCompleted={isCompleted}>
