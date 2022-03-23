@@ -2,8 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import transition from "./transition";
 
 const GlobalStyle = createGlobalStyle`
-
-
     body {
         ${transition}
         background-color: ${({ theme }) => theme.colors.main};
@@ -21,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
         position: relative;
     }
 
-    body, input {
+    :root, input {
         font-family: "Josefin Sans", sans-serif;
     }
 

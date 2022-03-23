@@ -1,7 +1,15 @@
 import styled, { css } from "styled-components";
+import img from "../assets/icon-check.svg";
 
 const checkedStyle = css`
   background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  ::after {
+    content: url(${img});
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+  }
 `;
 
 const uncheckedStyle = css`
