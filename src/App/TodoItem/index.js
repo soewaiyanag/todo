@@ -1,7 +1,11 @@
 import StyledTodoItem from "./styled";
 import Checkbox from "../../shared/Checkbox";
+import { useDispatch } from "react-redux";
+import { toggleComplete } from "../../store/todoSlice";
 
 const TodoItem = ({ children, id, isCompleted }) => {
+  const dispatch = useDispatch();
+
   return (
     <StyledTodoItem isCompleted={isCompleted}>
       <Checkbox
@@ -10,7 +14,7 @@ const TodoItem = ({ children, id, isCompleted }) => {
         checked={!isCompleted}
         isCompleted={isCompleted}
         onChange={(e) => {
-          console.log(e.target.checked);
+          dispatch(toggleComplete({ id }));
         }}
       />
       {children}
