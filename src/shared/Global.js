@@ -1,8 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import transition from "./transition";
 
 const GlobalStyle = createGlobalStyle`
 
+
     body {
+        ${transition}
         background-color: ${({ theme }) => theme.colors.main};
     }
 

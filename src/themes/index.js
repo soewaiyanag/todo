@@ -9,6 +9,9 @@ export const staticTheme = {
     borderRadius: "5px",
     gap: "18px",
   },
+  transition: {
+    timingFunc: "cubic-bezier(0.4, 0, 0.2, 1)",
+  },
 };
 
 export const darkTheme = {
