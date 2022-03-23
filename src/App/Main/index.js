@@ -1,15 +1,15 @@
-import Container from "../../shared/Container";
 import StyledMain from "./styled";
 import TodoForm from "../TodoForm";
-import TodoContainer from "../TodoContainer";
+import TodoItems from "../TodoItems";
+import TodoContainer from "../TodoContainer/styled";
 
 const Main = () => {
   return (
     <StyledMain>
-      <Container>
+      <TodoContainer>
         <TodoForm />
-        <TodoContainer />
-      </Container>
+        <TodoItems />
+      </TodoContainer>
     </StyledMain>
   );
 };
