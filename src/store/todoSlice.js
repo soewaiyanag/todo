@@ -11,15 +11,14 @@ export const todoSlice = createSlice({
       state.unshift(new Todo(action.payload.text));
     },
     remove: (state, action) => {
-      state = state.filter((todo) => todo.id !== action.payload.id);
+      state.splice(
+        state.findIndex((todo) => todo.id === action.payload.id),
+        1
+      );
     },
     toggleComplete: (state, action) => {
-      state = state.map((todo) => {
-        if (todo.id === action.payload.id) {
-          todo.isCompleted = !todo.isCompleted;
-        }
-        return todo;
-      });
+      const todo = state.find((todo) => todo.id === action.payload.id);
+      todo.isCompleted = !todo.isCompleted;
     },
   },
 });
