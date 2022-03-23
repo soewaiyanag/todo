@@ -2,6 +2,15 @@ import StyledTodoItem from "./styled";
 import Checkbox from "../../shared/Checkbox";
 import { useDispatch } from "react-redux";
 import { toggleComplete } from "../../store/todoSlice";
+import completeSoundURL from "../../assets/complete.mp3";
+
+const completeSound = new Audio(completeSoundURL);
+function playSound(isCompleted) {
+  if (isCompleted) {
+    completeSound.currentTime = 0; // to play sound continuously on click
+    completeSound.play();
+  }
+}
 
 const TodoItem = ({ children, id, isCompleted }) => {
   const dispatch = useDispatch();
@@ -13,7 +22,8 @@ const TodoItem = ({ children, id, isCompleted }) => {
         // to fix this it need to add "!" in front of isCompleted
         checked={!isCompleted}
         isCompleted={isCompleted}
-        onChange={(e) => {
+        onChange={() => {
+          playSound(!isCompleted);
           dispatch(toggleComplete({ id }));
         }}
       />
