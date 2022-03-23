@@ -25,7 +25,7 @@ const ThemeSwitcher = () => {
 
   return (
     <StyledThemeSwitcher
-      animationDuration={"200ms"}
+      animationDuration={"150ms"}
       animation={animation}
       src={switchIco}
       alt="theme-swicher"

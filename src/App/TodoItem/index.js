@@ -1,9 +1,10 @@
 import StyledTodoItem from "./styled";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import Checkbox from "shared/Checkbox";
 import { toggleComplete } from "store/todoSlice";
 import completeSoundURL from "assets/complete.mp3";
+import Checkbox from "shared/Checkbox";
+import DeleteIcon from "App/DeleteIcon";
 
 const TodoItem = ({ children, id, isCompleted }) => {
   const dispatch = useDispatch();
@@ -28,7 +29,8 @@ const TodoItem = ({ children, id, isCompleted }) => {
           dispatch(toggleComplete({ id }));
         }}
       />
-      {children}
+      <span>{children}</span>
+      <DeleteIcon id={id} />
     </StyledTodoItem>
   );
 };

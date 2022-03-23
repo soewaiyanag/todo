@@ -12,6 +12,7 @@ const TodoForm = () => {
   const onKeyDownHandler = (e) => {
     if (e.key === "Enter" && text !== "") {
       dispatch(add({ text }));
+      setText("");
     }
   };
 

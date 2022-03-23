@@ -8,7 +8,7 @@ export const todoSlice = createSlice({
   reducers: {
     // state equals todos
     add: (state, action) => {
-      state.push(new Todo(action.payload.text));
+      state.unshift(new Todo(action.payload.text));
     },
     remove: (state, action) => {
       state = state.filter((todo) => todo.id !== action.payload.id);

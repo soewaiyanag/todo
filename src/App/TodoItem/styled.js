@@ -8,7 +8,8 @@ const StyledTodoItem = styled(Box)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   gap: ${({ theme }) => theme.sizes.gap};
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   :last-child {
     border: none;
