@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import checkIcon from "assets/icon-check.svg";
-import transition from "./transition";
+import transition from "shared/transition";
 
 const checkedStyle = css`
   background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
