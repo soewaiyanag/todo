@@ -5,15 +5,15 @@ import switchSoundURL from "assets/switch_on.mp3";
 import lightSwitch from "assets/icon-moon.svg";
 import darkSwitch from "assets/icon-sun.svg";
 import { zoomInAnimation, zoomOutAnimation } from "shared/animation";
+import playSound from "javascripts/playSound";
 
 const ThemeSwitcher = () => {
   const { isDark, setIsDark } = useContext(DarkContext);
   const [switchIco, setSwitchIco] = useState(isDark ? darkSwitch : lightSwitch);
   const [animation, setAnimation] = useState(zoomOutAnimation);
-  const switchSound = new Audio(switchSoundURL);
 
   const clickHandler = () => {
-    switchSound.play();
+    playSound(switchSoundURL);
     setAnimation(zoomInAnimation);
     setIsDark((prev) => !prev);
   };

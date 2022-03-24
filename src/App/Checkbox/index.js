@@ -1,19 +1,12 @@
 import StyledCheckbox from "./styled";
 import { toggleComplete } from "store/todoSlice";
-import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import completeSoundURL from "assets/complete.mp3";
+import playSound from "javascripts/playSound";
 
 const Checkbox = ({ isCompleted, id }) => {
   const dispatch = useDispatch();
 
-  const playSound = useCallback(() => {
-    const completeSound = new Audio(completeSoundURL);
-    if (!isCompleted) {
-      completeSound.currentTime = 0; // to play sound continuously on click
-      completeSound.play();
-    }
-  }, [isCompleted]);
   return (
     <StyledCheckbox
       // if checked={true}, e.target.checked return "false"
@@ -21,7 +14,7 @@ const Checkbox = ({ isCompleted, id }) => {
       checked={!isCompleted}
       isCompleted={isCompleted}
       onChange={() => {
-        playSound();
+        if (!isCompleted) playSound(completeSoundURL);
         dispatch(toggleComplete({ id }));
       }}
     />
