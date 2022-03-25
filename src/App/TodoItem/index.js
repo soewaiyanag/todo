@@ -1,4 +1,4 @@
-import StyledTodoItem from "./styled";
+import StyledTodoItem, { TodoContent } from "./styled";
 import Checkbox from "App/Checkbox";
 import DeleteIcon from "App/DeleteIcon";
 
@@ -6,7 +6,7 @@ const TodoItem = ({ children, id, isCompleted }) => {
   return (
     <StyledTodoItem isCompleted={isCompleted}>
       <Checkbox id={id} isCompleted={isCompleted} />
-      <span>{children}</span>
+      <TodoContent>{children}</TodoContent>
       <DeleteIcon id={id} />
     </StyledTodoItem>
   );

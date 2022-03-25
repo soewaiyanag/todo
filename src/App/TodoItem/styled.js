@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Box from "shared/Box";
 
+export const TodoContent = styled.span`
+  font-size: 1rem;
+`;
+
 const StyledTodoItem = styled(Box)`
   color: ${({ theme, isCompleted }) =>
     isCompleted ? theme.colors.secText : theme.colors.primaryText};

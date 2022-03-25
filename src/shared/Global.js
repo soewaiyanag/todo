@@ -9,22 +9,13 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${({ theme }) => theme.colors.main};
     }
 
-    *,
-    ::after,
-    ::before {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     #root {
         position: relative;
     }
 
-    :root, input {
+    input, h1, div > input + span {
         font-family: "Josefin Sans", sans-serif;
     }
-
 `;
 
 export default GlobalStyle;
