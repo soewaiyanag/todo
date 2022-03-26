@@ -6,6 +6,10 @@ export const TodoContent = styled.span`
 `;
 
 const StyledTodoItem = styled(Box)`
+  :last-child {
+    border: none;
+  }
+
   color: ${({ theme, isCompleted }) =>
     isCompleted ? theme.colors.secText : theme.colors.primaryText};
   text-decoration: ${({ isCompleted }) => isCompleted && "line-through"};
@@ -15,9 +19,10 @@ const StyledTodoItem = styled(Box)`
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  :last-child {
-    border: none;
-  }
+
+  /* overwrite to fix out of position when dragging (react-beautiful-dnd) */
+  left: auto !important;
+  top: auto !important;
 `;
 
 export default StyledTodoItem;
