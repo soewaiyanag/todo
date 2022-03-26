@@ -20,9 +20,15 @@ export const todoSlice = createSlice({
       const todo = state.find((todo) => todo.id === action.payload.id);
       todo.isCompleted = !todo.isCompleted;
     },
+    reorder: (state, action) => {
+      const { source, destination } = action.payload;
+      const sourceTodo = state[source.index];
+      state.splice(source.index, 1);
+      state.splice(destination.index, 0, sourceTodo);
+    },
   },
 });
 
-export const { add, remove, toggleComplete } = todoSlice.actions;
+export const { add, remove, toggleComplete, reorder } = todoSlice.actions;
 
 export default todoSlice.reducer;

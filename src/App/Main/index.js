@@ -3,9 +3,19 @@ import TodoForm from "App/TodoForm";
 import TodoItems from "App/TodoItems";
 import { DragDropContext } from "react-beautiful-dnd";
 import TodoContainer from "App/TodoContainer/styled";
+import { reorder } from "store/todoSlice";
+import { useDispatch } from "react-redux";
 
 const Main = () => {
-  const handleOnDragEnd = (result) => {};
+  const dispatch = useDispatch();
+
+  const handleOnDragEnd = (result) => {
+    if (!result.destination) {
+      return;
+    }
+
+    dispatch(reorder(result));
+  };
 
   return (
     <StyledMain>
