@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         ${zoomOutAnimation}
         ${transition};
         background-color: ${({ theme }) => theme.colors.main};
+        overflow-x: hidden;
     }
 
     #root {
