@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import initialState from "./initialState";
-import Todo from "../javascripts/Todo";
+import { createSlice } from '@reduxjs/toolkit';
+import initialState from './initialState';
+import Todo from '../javascripts/Todo';
 
 export const todoSlice = createSlice({
-  name: "todo",
+  name: 'todo',
   initialState,
   reducers: {
     // state equals todos

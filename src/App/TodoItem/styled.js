@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Box from "shared/Box";
+import styled from 'styled-components';
+import Box from 'shared/Box';
 
 export const TodoContent = styled.span`
   font-size: 1rem;
@@ -12,7 +12,7 @@ const StyledTodoItem = styled(Box)`
 
   color: ${({ theme, isCompleted }) =>
     isCompleted ? theme.colors.secText : theme.colors.primaryText};
-  text-decoration: ${({ isCompleted }) => isCompleted && "line-through"};
+  text-decoration: ${({ isCompleted }) => isCompleted && 'line-through'};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   gap: ${({ theme }) => theme.sizes.gap};
 
@@ -23,6 +23,12 @@ const StyledTodoItem = styled(Box)`
   /* overwrite to fix out of position when dragging (react-beautiful-dnd) */
   left: auto !important;
   top: auto !important;
+
+  /* Styles while dragging */
+  border-radius: ${({ isDragging, theme }) =>
+    isDragging && theme.sizes.borderRadius};
+  outline: ${({ isDragging, theme }) =>
+    isDragging && '1px solid ' + theme.colors.primaryText};
 `;
 
 export default StyledTodoItem;

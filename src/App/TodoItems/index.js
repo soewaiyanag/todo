@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import TodoItem from "App/TodoItem";
-import StyledTodoItems from "./styled";
-import { Droppable } from "react-beautiful-dnd";
+import { useSelector } from 'react-redux';
+import TodoItem from 'App/TodoItem';
+import StyledTodoItems from './styled';
+import { Droppable } from 'react-beautiful-dnd';
 
 const TodoItems = () => {
   const todos = useSelector((state) => state.todos);
