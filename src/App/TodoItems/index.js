@@ -9,22 +9,24 @@ const TodoItems = () => {
 
   return (
     <Droppable droppableId="todo-items">
-      {(provided) => (
-        <StyledTodoItems ref={provided.innerRef} {...provided.droppableProps}>
-          {todos.map((todo, index) => (
-            <TodoItem
-              key={todo.id}
-              id={todo.id}
-              index={index}
-              isCompleted={todo.isCompleted}
-            >
-              {todo.text}
-            </TodoItem>
-          ))}
-          {provided.placeholder}
-          <TodoFooter />
-        </StyledTodoItems>
-      )}
+      {(provided) => {
+        return (
+          <StyledTodoItems ref={provided.innerRef} {...provided.droppableProps}>
+            {todos.map((todo, index) => (
+              <TodoItem
+                key={todo.id}
+                id={todo.id}
+                index={index}
+                isCompleted={todo.isCompleted}
+              >
+                {todo.text}
+              </TodoItem>
+            ))}
+            {provided.placeholder}
+            <TodoFooter />
+          </StyledTodoItems>
+        );
+      }}
     </Droppable>
   );
 };

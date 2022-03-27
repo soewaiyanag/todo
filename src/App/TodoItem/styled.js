@@ -23,8 +23,6 @@ const StyledTodoItem = styled(Box)`
   /* Styles while dragging */
   border-radius: ${({ isDragging, theme }) =>
     isDragging && theme.sizes.borderRadius};
-  outline: ${({ isDragging, theme }) =>
-    isDragging && '1px solid ' + theme.colors.primaryText};
 `;
 
 export default StyledTodoItem;

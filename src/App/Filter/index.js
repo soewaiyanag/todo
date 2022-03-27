@@ -1,13 +1,18 @@
 import StyledFilter from './styled';
 import FilterBtn from 'App/TodoFooterBtn/styled';
+import capatalize from 'javascripts/capitalize';
 //FilterBtn is TodoFooterBtn (changed name for readability)
+
+const filters = ['all', 'active', 'completed'];
 
 const Filter = () => {
   return (
     <StyledFilter>
-      <FilterBtn isClickable>All</FilterBtn>
-      <FilterBtn isClickable>Active</FilterBtn>
-      <FilterBtn isClickable>Completed</FilterBtn>
+      {filters.map((filter) => (
+        <FilterBtn isClickable key={'filter' + filter}>
+          {capatalize(filter)}
+        </FilterBtn>
+      ))}
     </StyledFilter>
   );
 };
