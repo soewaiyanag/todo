@@ -5,9 +5,9 @@ import FilterBtn from 'App/TodoFooterBtn/styled';
 const Filter = () => {
   return (
     <StyledFilter>
-      <FilterBtn>All</FilterBtn>
-      <FilterBtn>Active</FilterBtn>
-      <FilterBtn>Completed</FilterBtn>
+      <FilterBtn isClickable>All</FilterBtn>
+      <FilterBtn isClickable>Active</FilterBtn>
+      <FilterBtn isClickable>Completed</FilterBtn>
     </StyledFilter>
   );
 };

@@ -4,7 +4,7 @@ import fontFamily from 'shared/font-family';
 const StyledTodoFooterBtn = styled.button`
   ${fontFamily};
   color: ${({ theme }) => theme.colors.secText};
-  cursor: pointer;
+  cursor: ${({ isClickable }) => isClickable && 'pointer'};
   font-size: 0.8rem;
   font-weight: 700;
   /* reset default styles */
