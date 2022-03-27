@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const TodoInput = styled.input.attrs({ type: "text" })`
+const TodoInput = styled.input.attrs({ type: 'text' })`
+  font-family: ${({ theme }) => theme.font.family};
   color: ${({ theme }) => theme.colors.primaryText};
   width: 100%;
   font-weight: 500;

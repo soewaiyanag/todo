@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import transition from "./transition";
-import { zoomOutAnimation } from "./animation";
+import { createGlobalStyle } from 'styled-components';
+import transition from './transition';
+import { zoomOutAnimation } from './animation';
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -12,10 +12,6 @@ const GlobalStyle = createGlobalStyle`
 
     #root {
         position: relative;
-    }
-
-    input, h1, div > input + span {
-        font-family: "Josefin Sans", sans-serif;
     }
 `;
 

@@ -6,10 +6,6 @@ export const TodoContent = styled.span`
 `;
 
 const StyledTodoItem = styled(Box)`
-  :last-child {
-    border: none;
-  }
-
   color: ${({ theme, isCompleted }) =>
     isCompleted ? theme.colors.secText : theme.colors.primaryText};
   text-decoration: ${({ isCompleted }) => isCompleted && 'line-through'};

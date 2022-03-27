@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import TodoItem from 'App/TodoItem';
 import StyledTodoItems from './styled';
 import { Droppable } from 'react-beautiful-dnd';
+import TodoFooter from 'App/TodoFooter';
 
 const TodoItems = () => {
   const todos = useSelector((state) => state.todos);
@@ -21,6 +22,7 @@ const TodoItems = () => {
             </TodoItem>
           ))}
           {provided.placeholder}
+          <TodoFooter />
         </StyledTodoItems>
       )}
     </Droppable>
