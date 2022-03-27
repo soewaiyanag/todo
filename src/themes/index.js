@@ -23,9 +23,6 @@ export const darkTheme = {
     primaryText: 'hsl(234, 39%, 85%)',
     secText: 'hsl(234, 11%, 52%)',
   },
-  font: {
-    family: "'Josefin Sans', sans-serif",
-  },
 };
 
 export const lightTheme = {

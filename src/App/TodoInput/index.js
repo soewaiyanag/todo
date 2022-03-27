@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import fontFamily from 'shared/font-family';
 
 const TodoInput = styled.input.attrs({ type: 'text' })`
-  font-family: ${({ theme }) => theme.font.family};
+  ${fontFamily}
   color: ${({ theme }) => theme.colors.primaryText};
   width: 100%;
   font-weight: 500;
