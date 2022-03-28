@@ -63,8 +63,11 @@ export const todoSlice = createSlice({
 
     reorder: (state, action) => {
       const { source, destination } = action.payload;
+      // save the dragged todo
       const sourceTodo = state.todos[source.index];
+      // remove the dragged todo from it's original place
       state.todos.splice(source.index, 1);
+      // insert the saved todo to todos where it's dropped
       state.todos.splice(destination.index, 0, sourceTodo);
     },
   },

@@ -33,6 +33,7 @@ const Main = () => {
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <TodoItems />
         </DragDropContext>
+        <span>Drag and drop to reorder list</span>
       </TodoContainer>
     </StyledMain>
   );
