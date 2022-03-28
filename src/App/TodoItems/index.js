@@ -5,7 +5,7 @@ import { Droppable } from 'react-beautiful-dnd';
 import TodoFooter from 'App/TodoFooter';
 
 const TodoItems = () => {
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todos.todos);
   const filterKey = useSelector((state) => state.filter.key);
 
   const filterTodos = (todo) => {
