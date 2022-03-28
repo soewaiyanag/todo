@@ -63,7 +63,7 @@ export const todoSlice = createSlice({
 
     reorder: (state, action) => {
       const { source, destination } = action.payload;
-      const sourceTodo = state[source.index];
+      const sourceTodo = state.todos[source.index];
       state.todos.splice(source.index, 1);
       state.todos.splice(destination.index, 0, sourceTodo);
     },
