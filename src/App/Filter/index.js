@@ -1,16 +1,22 @@
 import StyledFilter from './styled';
+//FilterBtn is TodoFooterBtn (changed name for readability)
 import FilterBtn from 'App/TodoFooterBtn/styled';
 import capatalize from 'javascripts/capitalize';
-//FilterBtn is TodoFooterBtn (changed name for readability)
+import { useDispatch, useSelector } from 'react-redux';
 
-const filters = ['all', 'active', 'completed'];
+const filterNames = ['all', 'active', 'completed'];
 
 const Filter = () => {
+  const filter = useSelector((state) => state.filter);
   return (
     <StyledFilter>
-      {filters.map((filter) => (
-        <FilterBtn isClickable key={'filter' + filter}>
-          {capatalize(filter)}
+      {filterNames.map((filterName) => (
+        <FilterBtn
+          isActive={filterName === filter.filter}
+          isClickable
+          key={'filter-' + filterName}
+        >
+          {capatalize(filterName)}
         </FilterBtn>
       ))}
     </StyledFilter>
