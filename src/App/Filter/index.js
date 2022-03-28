@@ -16,7 +16,7 @@ const Filter = () => {
       {filterKeys.map((filterKey) => (
         <FilterBtn
           isClickable
-          isActive={filterKey === filter.filterKey}
+          isActive={filterKey === filter.key}
           key={'filter-' + filterKey}
           onClick={() => {
             dispatch(setFilter({ filterKey }));

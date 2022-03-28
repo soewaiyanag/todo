@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  filterKey: 'all',
-  showAll: true,
-  isCompleted: false,
+  key: 'all',
 };
 
 export const filterSlice = createSlice({
@@ -11,10 +9,7 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setFilter: (state, action) => {
-      const { filterKey } = action.payload;
-      state.filterKey = filterKey;
-      state.showAll = filterKey === 'all';
-      state.isCompleted = filterKey === 'completed';
+      state.key = action.payload.filterKey;
     },
   },
 });
