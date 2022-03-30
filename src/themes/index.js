@@ -3,7 +3,7 @@ import lightBg from '../assets/bg-desktop-light.jpg';
 
 export const staticTheme = {
   sizes: {
-    headerHeight: '14rem',
+    headerHeight: '14.5rem',
     borderRadius: '5px',
     gap: '18px',
   },

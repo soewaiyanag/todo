@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: -10;
   background-image: url(${({ theme }) => theme.images.headerBg});
   background-repeat: no-repeat;
   background-size: cover;
