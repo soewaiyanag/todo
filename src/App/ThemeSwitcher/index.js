@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import StyledThemeSwitcher from "./styled";
-import DarkContext from "context/DarkContext";
-import switchSoundURL from "assets/switch_on.mp3";
-import lightSwitch from "assets/icon-moon.svg";
-import darkSwitch from "assets/icon-sun.svg";
-import { zoomInAnimation, zoomOutAnimation } from "shared/animation";
-import playSound from "javascripts/playSound";
+import { useContext, useState } from 'react';
+import StyledThemeSwitcher, { ThemeSwitcherWrapper } from './styled';
+import DarkContext from 'context/DarkContext';
+import switchSoundURL from 'assets/switch_on.mp3';
+import lightSwitch from 'assets/icon-moon.svg';
+import darkSwitch from 'assets/icon-sun.svg';
+import { zoomInAnimation, zoomOutAnimation } from 'shared/animation';
+import playSound from 'javascripts/playSound';
 
 const ThemeSwitcher = () => {
   const { isDark, setIsDark } = useContext(DarkContext);
@@ -24,14 +24,16 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <StyledThemeSwitcher
-      animationDuration={"150ms"}
-      animation={animation}
-      src={switchIco}
-      alt="theme-swicher"
-      onClick={clickHandler}
-      onAnimationEnd={animationEndHandler}
-    />
+    <ThemeSwitcherWrapper>
+      <StyledThemeSwitcher
+        animationDuration={'150ms'}
+        animation={animation}
+        src={switchIco}
+        alt="theme-swicher"
+        onClick={clickHandler}
+        onAnimationEnd={animationEndHandler}
+      />
+    </ThemeSwitcherWrapper>
   );
 };
 

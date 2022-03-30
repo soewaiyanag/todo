@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "@atlaskit/css-reset";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { DarkProvider } from "./context/DarkContext";
-import { store } from "./store/store";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '@atlaskit/css-reset';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { DarkProvider } from './context/DarkContext';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ ReactDOM.render(
       </Provider>
     </DarkProvider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

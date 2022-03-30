@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   min-height: ${({ theme }) => theme.sizes.headerHeight};
 
   /* Container === div */
-  div {
+  & > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
