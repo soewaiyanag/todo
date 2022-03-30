@@ -2,6 +2,9 @@ import darkBg from '../assets/bg-desktop-dark.jpg';
 import lightBg from '../assets/bg-desktop-light.jpg';
 
 export const staticTheme = {
+  breakpoint: {
+    sm: '498px',
+  },
   sizes: {
     headerHeight: '14.5rem',
     borderRadius: '5px',

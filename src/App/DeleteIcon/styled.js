@@ -8,7 +8,7 @@ const StyledDeleteIcon = styled(CrossIcon)`
   cursor: pointer;
   opacity: 0;
 
-  @media screen and (max-width: 526px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoint.sm}) {
     opacity: 1;
   }
 

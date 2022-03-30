@@ -5,6 +5,10 @@ import fontFamily from './font-family';
 const Box = styled.div`
   ${fontFamily}
   ${transition}
+  border-top-left-radius: ${({ theme }) => theme.sizes.borderRadius};
+  border-top-right-radius: ${({ theme }) => theme.sizes.borderRadius};
+  border-bottom-left-radius: ${({ theme }) => theme.sizes.borderRadius};
+  border-bottom-right-radius: ${({ theme }) => theme.sizes.borderRadius};
   background-color: ${({ theme }) => theme.colors.box};
   padding: 1rem;
 `;
