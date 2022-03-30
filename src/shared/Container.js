@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const px = "20px";
+const px = '20px';
 
 const Container = styled.div`
-  max-width: 500px;
+  max-width: 486px;
   margin-left: auto;
   margin-right: auto;
   padding-left: ${px};

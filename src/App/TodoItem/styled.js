@@ -19,6 +19,12 @@ const StyledTodoItem = styled(Box)`
   /* Styles while dragging */
   border-radius: ${({ isDragging, theme }) =>
     isDragging && theme.sizes.borderRadius};
+
+  @media screen and (min-width: 526px) {
+    &:hover > svg {
+      opacity: 1;
+    }
+  }
 `;
 
 export default StyledTodoItem;
