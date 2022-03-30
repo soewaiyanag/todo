@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
     #root {
         position: relative;
-    }
+      }
 `;
 
 export default GlobalStyle;

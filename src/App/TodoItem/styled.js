@@ -16,10 +16,6 @@ const StyledTodoItem = styled(Box)`
   grid-template-columns: auto 1fr auto;
   align-items: center;
 
-  /* overwrite to fix out of position when dragging (react-beautiful-dnd) */
-  left: auto !important;
-  top: auto !important;
-
   /* Styles while dragging */
   border-radius: ${({ isDragging, theme }) =>
     isDragging && theme.sizes.borderRadius};

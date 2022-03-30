@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { ReactComponent as CrossIcon } from "assets/icon-cross.svg";
+import styled from 'styled-components';
+import { ReactComponent as CrossIcon } from 'assets/icon-cross.svg';
 
 const StyledDeleteIcon = styled(CrossIcon)`
   transform: scale(0.8); /* to small the size */
