@@ -1,4 +1,4 @@
-import StyledMain from './styled';
+import StyledMain, { FooterText } from './styled';
 import TodoForm from 'App/TodoForm';
 import TodoItems from 'App/TodoItems';
 import { DragDropContext } from 'react-beautiful-dnd';
@@ -33,7 +33,7 @@ const Main = () => {
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <TodoItems />
         </DragDropContext>
-        <span>Drag and drop to reorder list</span>
+        <FooterText>Drag and drop to reorder list</FooterText>
       </TodoContainer>
     </StyledMain>
   );
