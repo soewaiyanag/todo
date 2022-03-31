@@ -10,7 +10,7 @@ const StyledTodoFooterBtn = styled.button`
   color: ${({ theme, isActive }) =>
     isActive ? activeColor : theme.colors.secText};
   cursor: ${({ isClickable }) => isClickable && 'pointer'};
-  font-size: 0.8rem;
+  font-size: 0.785rem;
   font-weight: 700;
   /* reset default styles */
   background-color: transparent;

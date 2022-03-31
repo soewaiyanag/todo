@@ -6,7 +6,7 @@ export const staticTheme = {
     sm: '498px',
   },
   sizes: {
-    headerHeight: '14.5rem',
+    headerHeight: '17rem',
     borderRadius: '5px',
     gap: '18px',
   },

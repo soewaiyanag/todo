@@ -5,11 +5,14 @@ const StyledFilter = styled(Box)`
   padding: 0; /* to remove padding from Box */
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoint.sm}) {
-    position: absolute;
-    z-index: 10;
+    gap: 0.6rem;
     inset: 0;
     transform: translateY(4rem);
   }

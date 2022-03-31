@@ -6,17 +6,18 @@ export const FooterText = styled.span`
     margin-top: 7rem;
   }
 
-  margin-top: 2.5rem;
+  margin-top: 2.8rem;
   margin-bottom: 4rem;
   display: flex;
   justify-content: center;
+  font-size: 0.75rem;
   font-weight: 500;
-  ${fontFamily};
   color: ${({ theme }) => theme.colors.secText};
+  ${fontFamily};
 `;
 
 const StyledMain = styled.main`
-  padding-top: 7rem;
+  padding-top: 9.2rem;
   padding-bottom: 2rem;
 `;
 

@@ -19,7 +19,7 @@ const uncheckedStyle = css`
 
 const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
   ${transition}
-  height: 20px;
+  height: 1.4rem;
   aspect-ratio: 1/1;
   position: relative;
   appearance: none;
