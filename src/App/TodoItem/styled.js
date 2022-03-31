@@ -18,6 +18,9 @@ const StyledTodoItem = styled(Box)`
   grid-template-columns: auto 1fr auto;
   align-items: center;
 
+  position: relative;
+  z-index: 10;
+
   /* Styles while dragging */
   border-radius: ${({ isDragging, theme }) =>
     isDragging && theme.sizes.borderRadius};
