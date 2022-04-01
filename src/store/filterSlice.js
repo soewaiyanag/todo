@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const savedFilter = localStorage.getItem('filter');
+
 const initialState = {
-  key: 'all',
+  key: savedFilter ?? 'all',
 };
 
 export const filterSlice = createSlice({
