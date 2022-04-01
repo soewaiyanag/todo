@@ -1,20 +1,21 @@
-import { useDispatch } from "react-redux";
-import StyledCheckbox from "App/Checkbox/styled";
-import StyledTodoForm from "./styled";
-import TodoInput from "App/TodoInput";
-import { add } from "store/todoSlice";
-import { useState } from "react";
-import clickSoundURL from "assets/click-sound.mp3";
-import playSound from "javascripts/playSound";
+import { useDispatch } from 'react-redux';
+import StyledCheckbox from 'App/Checkbox/styled';
+import StyledTodoForm from './styled';
+import TodoInput from 'App/TodoInput';
+import { add } from 'store/todoSlice';
+import { useState } from 'react';
+import clickSoundURL from 'assets/click-sound.mp3';
+import playSound from 'javascripts/playSound';
 
 const TodoForm = () => {
   const dispatch = useDispatch();
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   const onKeyDownHandler = (e) => {
-    if (e.key === "Enter" && text !== "") {
+    // .trim() to remove unnessary space
+    if (e.key === 'Enter' && text.trim() !== '') {
       dispatch(add({ text }));
-      setText("");
+      setText('');
       playSound(clickSoundURL);
     }
   };
