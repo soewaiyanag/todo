@@ -10,6 +10,7 @@ I already did this challenge when I started learning javascript. With minimum fe
 
 - How to work with Redux-toolkit, React-redux
 - How to style things with styled-components
+- Building custom middleware for saving states to localStorage
 - Building small animations
 - More familiar with React, Redux && Styled-components
 
