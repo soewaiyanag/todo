@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import Todo from '../javascripts/Todo';
 
+const savedTodos = JSON.parse(localStorage.getItem('todos'));
+
 const initialState = {
-  todos: [
+  todos: savedTodos ?? [
     {
       id: 'td-1',
       text: 'Complete online JavaScript course',
