@@ -31,7 +31,10 @@ const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
     !isCompleted && '2px solid ' + theme.colors.border};
 `;
 
-export const DummyCheckbox = styled(StyledCheckbox).attrs({ as: 'div' })`
+export const DummyCheckbox = styled(StyledCheckbox).attrs({
+  as: 'div',
+  type: '',
+})`
   cursor: default;
   /* changing to div changed behaviour */
   /* to fix it, have to add 2 lines below */

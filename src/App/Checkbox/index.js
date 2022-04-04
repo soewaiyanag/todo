@@ -1,10 +1,10 @@
-import StyledCheckbox from "./styled";
-import { toggleComplete } from "store/todoSlice";
-import { useDispatch } from "react-redux";
-import completeSoundURL from "assets/complete.mp3";
-import playSound from "javascripts/playSound";
+import StyledCheckbox from './styled';
+import { toggleComplete } from 'store/todoSlice';
+import { useDispatch } from 'react-redux';
+import completeSoundURL from 'assets/complete.mp3';
+import playSound from 'javascripts/playSound';
 
-const Checkbox = ({ isCompleted, id }) => {
+const Checkbox = ({ isCompleted, id, label }) => {
   const dispatch = useDispatch();
 
   return (
@@ -13,6 +13,7 @@ const Checkbox = ({ isCompleted, id }) => {
       // to fix this it need to add "!" in front of isCompleted
       checked={!isCompleted}
       isCompleted={isCompleted}
+      aria-label={label ?? ''}
       onChange={() => {
         if (!isCompleted) playSound(completeSoundURL);
         dispatch(toggleComplete({ id }));

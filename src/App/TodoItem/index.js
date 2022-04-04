@@ -15,7 +15,7 @@ const TodoItem = ({ children, id, isCompleted, index }) => {
             isCompleted={isCompleted}
             isDragging={snapshot.isDragging}
           >
-            <Checkbox id={id} isCompleted={isCompleted} />
+            <Checkbox id={id} isCompleted={isCompleted} label="toggle todo" />
             <TodoContent>{children}</TodoContent>
             <DeleteIcon id={id} />
           </StyledTodoItem>
