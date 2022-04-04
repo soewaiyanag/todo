@@ -16,4 +16,4 @@ I already did this challenge when I started learning javascript. With minimum fe
 
 ## preview link
 
-[link to preview website](https://62455ed0610a70082820dc60--fluffy-churros-6e2bed.netlify.app/)
+[link to preview website](https://fluffy-churros-6e2bed.netlify.app/)
