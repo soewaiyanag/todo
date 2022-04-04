@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import StyledCheckbox from 'App/Checkbox/styled';
+import { DummyCheckbox } from 'App/Checkbox/styled';
 import StyledTodoForm from './styled';
 import TodoInput from 'App/TodoInput';
 import { add } from 'store/todoSlice';
@@ -26,7 +26,7 @@ const TodoForm = () => {
 
   return (
     <StyledTodoForm>
-      <StyledCheckbox readOnly />
+      <DummyCheckbox />
       <TodoInput
         value={text}
         onKeyDown={onKeyDownHandler}

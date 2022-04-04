@@ -26,9 +26,17 @@ const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border-radius: 50%;
   justify-self: center;
   ${({ isCompleted }) => (isCompleted ? checkedStyle : uncheckedStyle)};
-  cursor: ${(props) => !props.readOnly && 'pointer'};
+  cursor: pointer;
   border: ${({ theme, isCompleted }) =>
     !isCompleted && '2px solid ' + theme.colors.border};
+`;
+
+export const DummyCheckbox = styled(StyledCheckbox).attrs({ as: 'div' })`
+  cursor: default;
+  /* changing to div changed behaviour */
+  /* to fix it, have to add 2 lines below */
+  height: 1.2rem;
+  margin-left: 0.2rem;
 `;
 
 export default StyledCheckbox;
