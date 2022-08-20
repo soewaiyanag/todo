@@ -1,4 +1,4 @@
-# Frontend Mentor - Interactive comments section
+# Frontend Mentor - Todo App With Drag And Drop Functions
 
 ## About this project
 
