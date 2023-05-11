@@ -8,18 +8,20 @@ import { zoomInAnimation, zoomOutAnimation } from 'shared/animation';
 import playSound from 'javascripts/playSound';
 
 const ThemeSwitcher = () => {
-  const { isDark, setIsDark } = useContext(DarkContext);
-  const [switchIco, setSwitchIco] = useState(isDark ? darkSwitch : lightSwitch);
+  const { isDarkMode, setIsDarkMode } = useContext(DarkContext);
+  const [switchIco, setSwitchIco] = useState(
+    isDarkMode ? darkSwitch : lightSwitch
+  );
   const [animation, setAnimation] = useState(zoomOutAnimation);
 
   const clickHandler = () => {
     playSound(switchSoundURL);
     setAnimation(zoomInAnimation);
-    setIsDark((prev) => !prev);
+    setIsDarkMode((prev) => !prev);
   };
 
   const animationEndHandler = () => {
-    setSwitchIco(isDark ? darkSwitch : lightSwitch);
+    setSwitchIco(isDarkMode ? darkSwitch : lightSwitch);
     setAnimation(zoomOutAnimation);
   };
 

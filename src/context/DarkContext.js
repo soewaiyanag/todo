@@ -11,10 +11,10 @@ function preferDarkMode() {
 }
 
 export function DarkProvider({ children }) {
-  const [isDark, setIsDark] = useState(preferDarkMode());
+  const [isDarkMode, setIsDarkMode] = useState(preferDarkMode());
 
   return (
-    <DarkContext.Provider value={{ isDark, setIsDark }}>
+    <DarkContext.Provider value={{ isDarkMode, setIsDarkMode }}>
       {children}
     </DarkContext.Provider>
   );

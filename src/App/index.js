@@ -4,16 +4,15 @@ import DarkContext from 'context/DarkContext';
 import GlobalStyle from 'shared/Global';
 import Header from './Header';
 import Main from './Main';
-import { staticTheme, darkTheme, lightTheme } from 'themes';
+import { darkTheme, lightTheme } from 'theme/theme';
 
 function App() {
-  const { isDark } = useContext(DarkContext);
-  const theme = isDark ? darkTheme : lightTheme;
-  const rootTheme = { ...theme, ...staticTheme };
+  const { isDarkMode } = useContext(DarkContext);
+  const theme = isDarkMode ? darkTheme : lightTheme;
 
   return (
     <>
-      <ThemeProvider theme={rootTheme}>
+      <ThemeProvider theme={theme}>
         {/*animationDuration is for body tag */}
         <GlobalStyle animationDuration={'1s'} />
         <Header />

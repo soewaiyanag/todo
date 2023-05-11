@@ -1,7 +1,7 @@
 import darkBg from '../assets/bg-desktop-dark.jpg';
 import lightBg from '../assets/bg-desktop-light.jpg';
 
-export const staticTheme = {
+const sharedTheme = {
   breakpoint: {
     sm: '498px',
   },
@@ -16,6 +16,7 @@ export const staticTheme = {
 };
 
 export const darkTheme = {
+  ...sharedTheme,
   images: {
     headerBg: darkBg,
   },
@@ -29,6 +30,7 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
+  ...sharedTheme,
   images: {
     headerBg: lightBg,
   },
