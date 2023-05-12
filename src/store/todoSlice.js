@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import Todo from '../javascripts/Todo';
+import Todo from '../func/Todo';
 
 const savedTodos = JSON.parse(localStorage.getItem('todos'));
 

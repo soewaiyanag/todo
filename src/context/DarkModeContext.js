@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-const DarkContext = createContext('');
+const DarkModeContext = createContext('');
 
 // check if machine is using light mode or dark mode
 function preferDarkMode() {
@@ -14,10 +14,10 @@ export function DarkProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(preferDarkMode());
 
   return (
-    <DarkContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+    <DarkModeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
       {children}
-    </DarkContext.Provider>
+    </DarkModeContext.Provider>
   );
 }
 
-export default DarkContext;
+export default DarkModeContext;

@@ -3,7 +3,7 @@ import StyledTodoFooter from './StyledFooter';
 import TodoFooterBtn from 'App/TodoFooterBtn/StyledTodoFooterBtn';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCompleted } from 'store/todoSlice.js';
-import playSound from 'javascripts/playSound';
+import playSound from 'func/playSound';
 import deleteSoundURL from 'assets/click-sound.mp3';
 
 const LeftItems = () => {

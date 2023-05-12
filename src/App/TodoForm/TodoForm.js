@@ -5,7 +5,7 @@ import TodoInput from 'App/TodoInput/TodoInput';
 import { add } from 'store/todoSlice';
 import { useState } from 'react';
 import clickSoundURL from 'assets/click-sound.mp3';
-import playSound from 'javascripts/playSound';
+import playSound from 'func/playSound';
 
 const TodoForm = () => {
   const dispatch = useDispatch();

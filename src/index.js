@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import '@atlaskit/css-reset';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { DarkProvider } from './context/DarkContext';
+import { DarkProvider } from './context/DarkModeContext';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
 

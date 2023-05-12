@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import DarkContext from 'context/DarkContext';
+import DarkContext from 'context/DarkModeContext';
 import GlobalStyle from 'shared/Global';
 import Header from './Header/Header';
 import Main from './Main/Main';

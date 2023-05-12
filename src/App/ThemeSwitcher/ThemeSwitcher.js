@@ -2,12 +2,12 @@ import { useContext, useState } from 'react';
 import StyledThemeSwitcher, {
   ThemeSwitcherWrapper,
 } from './StyledThemeSwitcher';
-import DarkContext from 'context/DarkContext';
+import DarkContext from 'context/DarkModeContext';
 import switchSoundURL from 'assets/switch_on.mp3';
 import lightSwitch from 'assets/icon-moon.svg';
 import darkSwitch from 'assets/icon-sun.svg';
 import { zoomInAnimation, zoomOutAnimation } from 'shared/animation';
-import playSound from 'javascripts/playSound';
+import playSound from 'func/playSound';
 
 const ThemeSwitcher = () => {
   const { isDarkMode, setIsDarkMode } = useContext(DarkContext);
