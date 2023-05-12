@@ -36,7 +36,7 @@ export const DummyCheckbox = styled(StyledCheckbox).attrs({
   type: '',
 })`
   cursor: default;
-  /* changing to div changed behaviour */
+  /* changing to div changed behavior */
   /* to fix it, have to add 2 lines below */
   height: 1.2rem;
   margin-left: 0.2rem;
