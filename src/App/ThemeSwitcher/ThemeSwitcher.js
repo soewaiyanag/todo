@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react';
-import StyledThemeSwitcher, { ThemeSwitcherWrapper } from './styled';
+import StyledThemeSwitcher, {
+  ThemeSwitcherWrapper,
+} from './StyledThemeSwitcher';
 import DarkContext from 'context/DarkContext';
 import switchSoundURL from 'assets/switch_on.mp3';
 import lightSwitch from 'assets/icon-moon.svg';

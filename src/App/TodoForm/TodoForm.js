@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { DummyCheckbox } from 'App/Checkbox/styled';
-import StyledTodoForm from './styled';
-import TodoInput from 'App/TodoInput';
+import { DummyCheckbox } from 'App/Checkbox/StyledCheckbox';
+import StyledTodoForm from './StyledTodoForm';
+import TodoInput from 'App/TodoInput/TodoInput';
 import { add } from 'store/todoSlice';
 import { useState } from 'react';
 import clickSoundURL from 'assets/click-sound.mp3';

@@ -1,4 +1,4 @@
-import StyledCheckbox from './styled';
+import StyledCheckbox from './StyledCheckbox';
 import { toggleComplete } from 'store/todoSlice';
 import { useDispatch } from 'react-redux';
 import completeSoundURL from 'assets/complete.mp3';

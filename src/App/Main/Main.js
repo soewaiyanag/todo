@@ -1,8 +1,8 @@
-import StyledMain, { FooterText } from './styled';
-import TodoForm from 'App/TodoForm';
-import TodoItems from 'App/TodoItems';
+import StyledMain, { FooterText } from './StyledMain';
+import TodoForm from 'App/TodoForm/TodoForm';
+import TodoItems from 'App/TodoItems/TodoItems';
 import { DragDropContext } from 'react-beautiful-dnd';
-import TodoContainer from 'App/TodoContainer/styled';
+import TodoContainer from 'App/TodoContainer/StyledTodoContainer';
 import { reorder } from 'store/todoSlice';
 import { useDispatch } from 'react-redux';
 

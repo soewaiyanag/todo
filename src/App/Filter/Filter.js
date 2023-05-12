@@ -1,6 +1,6 @@
-import StyledFilter from './styled';
+import StyledFilter from './StyledFilter';
 //FilterBtn is TodoFooterBtn (changed name for readability)
-import FilterBtn from 'App/TodoFooterBtn/styled';
+import FilterBtn from 'App/TodoFooterBtn/StyledTodoFooterBtn';
 import capatalize from 'javascripts/capitalize';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'store/filterSlice';

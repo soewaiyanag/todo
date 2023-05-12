@@ -1,6 +1,6 @@
-import Filter from 'App/Filter';
-import StyledTodoFooter from './styled';
-import TodoFooterBtn from 'App/TodoFooterBtn/styled';
+import Filter from 'App/Filter/Filter';
+import StyledTodoFooter from './StyledFooter';
+import TodoFooterBtn from 'App/TodoFooterBtn/StyledTodoFooterBtn';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCompleted } from 'store/todoSlice.js';
 import playSound from 'javascripts/playSound';

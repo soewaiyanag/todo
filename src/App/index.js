@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import DarkContext from 'context/DarkContext';
 import GlobalStyle from 'shared/Global';
-import Header from './Header';
-import Main from './Main';
+import Header from './Header/Header';
+import Main from './Main/Main';
 import { darkTheme, lightTheme } from 'theme/theme';
 
 function App() {

@@ -1,5 +1,5 @@
-import StyledTodoItem, { TodoContent } from './styled';
-import Checkbox from 'App/Checkbox';
+import StyledTodoItem, { TodoContent } from './StyledTodoItem';
+import Checkbox from 'App/Checkbox/Checkbox';
 import DeleteIcon from 'App/DeleteIcon';
 import { Draggable } from 'react-beautiful-dnd';
 
