@@ -1,19 +1,38 @@
-# Frontend Mentor - Todo App With Drag And Drop Functions
+# Todo App With Drag And Drop Functions
 
-## About this project
+## About
 
-This is the challenge from [frontendmentor.io](frontendmentor.io).
-You may ask everyone is building/ can build todo apps, this project is common. What is so special about it? No, it's different.
-I already did this challenge when I started learning javascript. With minimum features. But now after 3 months of learning more javascript and react, I decided to recreate this challenge with React and add a drag and drop feature.
+Here's a challenge from [Frontend Mentor](https://frontendmentor.io). While many people are creating or can create basic todo apps, this project is quite common. You might wonder, what's unique about it? Well, it's not your usual project. I initially completed this challenge when I was just starting to learn JavaScript, and it had minimal features. Now, after three months of diving deeper into JavaScript and React, I've decided to redo this challenge using React and incorporate a drag-and-drop feature to enhance its functionality.
 
-## What I learned from this challenge
+## What I Learned from This Challenge
 
-- How to work with Redux-toolkit, React-redux
-- How to style things with styled-components
-- Building custom middleware for saving states to localStorage
-- Building small animations
-- More familiar with React, Redux && Styled-components
+- Utilization of Redux Toolkit and React Redux
+- Styling components with Styled Components
+- Implementation of custom middleware for persisting states to localStorage
+- Incorporation of small animations
+- Strengthened familiarity with React, Redux, and Styled Components
 
-## preview link
+## Preview Link
 
-[link to preview website](https://todo-soewaiyanag.netlify.app/)
+[Todo App With Drag And Drop Functions Preview](https://todo-soewaiyanag.netlify.app/)
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/todo-app-drag-and-drop.git
+
+# Change into the project directory
+cd todo-app-drag-and-drop
+
+# Install dependencies
+npm install
+
+# Preview on browser
+npm start
+```
