@@ -25,10 +25,10 @@ Here's a challenge from [Frontend Mentor](https://frontendmentor.io). While many
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/todo-app-drag-and-drop.git
+git clone https://github.com/soewaiyanag/todo.git
 
 # Change into the project directory
-cd todo-app-drag-and-drop
+cd todo
 
 # Install dependencies
 npm install
